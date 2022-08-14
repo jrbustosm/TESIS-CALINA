@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns:cc="http://creativecommons.org/ns#"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:ns1="http://sozi.baierouge.fr"
+    id="svg4745"
+    sodipodi:docname="Shield_ClassicMedieval.svg"
+    inkscape:export-filename="C:\Users\Gribba\Desktop\SVG Work\Shield_large.png"
+    viewBox="0 0 443.8 605.78"
+    inkscape:export-xdpi="300"
+    version="1.1"
+    inkscape:export-ydpi="300"
+    inkscape:version="0.48.0 r9654"
+  >
+  <defs
+      id="defs4747"
+    >
+    <linearGradient
+        id="linearGradient4705"
+        y2="531.27"
+        gradientUnits="userSpaceOnUse"
+        y1="528.84"
+        gradientTransform="translate(-114.53 -242.85)"
+        x2="643.68"
+        x1="206.85"
+        inkscape:collect="always"
+      >
+      <stop
+          id="stop3169-6"
+          style="stop-color:#fffdd2;stop-opacity:.75439"
+          offset="0"
+      />
+      <stop
+          id="stop3171-8"
+          style="stop-color:#ffdd71;stop-opacity:.82456"
+          offset=".11353"
+      />
+      <stop
+          id="stop3173-8"
+          style="stop-color:#ffef6e;stop-opacity:.83333"
+          offset=".54393"
+      />
+      <stop
+          id="stop3175-2"
+          style="stop-color:#ffc255;stop-opacity:.82456"
+          offset=".81916"
+      />
+      <stop
+          id="stop3177-0"
+          style="stop-color:#ffdb48;stop-opacity:.81579"
+          offset="1"
+      />
+    </linearGradient
+    >
+    <linearGradient
+        id="linearGradient4431-7"
+        y2="475.34"
+        xlink:href="#linearGradient3182-5-4"
+        gradientUnits="userSpaceOnUse"
+        x2="220.55"
+        y1="475.34"
+        x1="676.19"
+        inkscape:collect="always"
+    />
+    <linearGradient
+        id="linearGradient3182-5-4"
+      >
+      <stop
+          id="stop3184-6-1"
+          style="stop-color:#a6a6a6"
+          offset="0"
+      />
+      <stop
+          id="stop3192-2-4"
+          style="stop-color:#f4f4f4"
+          offset=".5"
+      />
+      <stop
+          id="stop3194-0-6"
+          style="stop-color:#dbdbdb"
+          offset=".78274"
+      />
+      <stop
+          id="stop3186-3-0"
+          style="stop-color:#b5b5b5"
+          offset="1"
+      />
+    </linearGradient
+    >
+    <linearGradient
+        id="linearGradient4760"
+        y2="531.27"
+        xlink:href="#linearGradient3182-5-4"
+        gradientUnits="userSpaceOnUse"
+        y1="531.27"
+        x2="641.68"
+        x1="252.63"
+        inkscape:collect="always"
+    />
+    <linearGradient
+        id="linearGradient4823"
+        y2="475.34"
+        gradientUnits="userSpaceOnUse"
+        x2="220.55"
+        y1="475.34"
+        x1="676.19"
+        inkscape:collect="always"
+      >
+      <stop
+          id="stop13332"
+          style="stop-color:#acacac"
+          offset="0"
+      />
+      <stop
+          id="stop13334"
+          style="stop-color:#b3b3b3;stop-opacity:0"
+          offset="1"
+      />
+    </linearGradient
+    >
+    <radialGradient
+        id="radialGradient4893"
+        gradientUnits="userSpaceOnUse"
+        cy="28.439"
+        cx="502.87"
+        gradientTransform="matrix(1 0 0 1.3658 0 -105.5)"
+        r="194.03"
+        inkscape:collect="always"
+      >
+      <stop
+          id="stop4889"
+          style="stop-color:#ffffff"
+          offset="0"
+      />
+      <stop
+          id="stop4891"
+          style="stop-color:#ffffff;stop-opacity:0"
+          offset="1"
+      />
+    </radialGradient
+    >
+    <radialGradient
+        id="radialGradient5039"
+        cx="221.06"
+        gradientUnits="userSpaceOnUse"
+        cy="147.12"
+        r="2.6973"
+        inkscape:collect="always"
+      >
+      <stop
+          id="stop5066"
+          style="stop-color:#fffdd2"
+          offset="0"
+      />
+      <stop
+          id="stop5068"
+          style="stop-color:#ffdd71"
+          offset=".38586"
+      />
+      <stop
+          id="stop5070"
+          style="stop-color:#ffef6e"
+          offset="0.605"
+      />
+      <stop
+          id="stop5072"
+          style="stop-color:#ffdb48"
+          offset=".83672"
+      />
+      <stop
+          id="stop5074"
+          style="stop-color:#482e00"
+          offset="1"
+      />
+    </radialGradient
+    >
+    <radialGradient
+        id="radialGradient7264"
+        gradientUnits="userSpaceOnUse"
+        cy="405.24"
+        cx="344.92"
+        gradientTransform="matrix(1.2283 -.036106 .046456 1.5801 -97.578 -217.59)"
+        r="115.75"
+        inkscape:collect="always"
+      >
+      <stop
+          id="stop5893"
+          style="stop-color:#fffdd2"
+          offset="0"
+      />
+      <stop
+          id="stop5895"
+          style="stop-color:#ffdd71"
+          offset=".47355"
+      />
+      <stop
+          id="stop5897"
+          style="stop-color:#ffef6e"
+          offset=".69520"
+      />
+      <stop
+          id="stop5899"
+          style="stop-color:#ffdb48"
+          offset=".84685"
+      />
+      <stop
+          id="stop5901"
+          style="stop-color:#482e00"
+          offset="1"
+      />
+    </radialGradient
+    >
+  </defs
+  >
+  <sodipodi:namedview
+      id="base"
+      fit-margin-left="0"
+      inkscape:zoom="0.5"
+      borderopacity="1.0"
+      inkscape:current-layer="layer11"
+      inkscape:cx="102.46253"
+      inkscape:cy="246.3223"
+      inkscape:window-maximized="1"
+      showgrid="false"
+      fit-margin-right="0"
+      inkscape:guide-bbox="true"
+      showguides="true"
+      bordercolor="#666666"
+      inkscape:window-x="-8"
+      inkscape:window-y="-8"
+      fit-margin-bottom="0"
+      inkscape:window-width="1280"
+      inkscape:pageopacity="0.0"
+      inkscape:pageshadow="2"
+      pagecolor="#ffffff"
+      inkscape:document-units="px"
+      inkscape:window-height="962"
+      fit-margin-top="0"
+  />
+  <g
+      id="layer11"
+      inkscape:label="Decor"
+      inkscape:groupmode="layer"
+      transform="translate(-122.53 -123.01)"
+    >
+    <g
+        id="g4114"
+      >
+      <g
+          id="g4683"
+          inkscape:export-ydpi="300"
+          inkscape:export-filename="C:\Users\Gribba\Desktop\SVG Work\Shield_M_large.png"
+          transform="translate(-102.73 -105.27)"
+          inkscape:export-xdpi="300"
+        >
+        <path
+            id="path4411"
+            d="m233.58 297.27c-13.106 169-32.955 373.05 213.57 535 246.53-161.95 226.68-366 213.57-535-81.788-1-149.54-11-213.57-67-64.035 56-131.79 66-213.57 67z"
+            sodipodi:nodetypes="ccccc"
+            style="stroke:url(#linearGradient4823);stroke-width:3;fill:url(#linearGradient4431-7)"
+            inkscape:connector-curvature="0"
+        />
+        <path
+            id="path4415"
+            d="m259.14 325.26c-11.54 148.79-29.01 328.43 188.01 471.01 217.03-142.58 199.55-322.22 188.02-471.01-72-0.88-131.65-9.68-188.02-58.99-56.37 49.31-116.01 58.11-188.01 58.99z"
+            sodipodi:nodetypes="ccccc"
+            style="fill:url(#linearGradient4760)"
+            inkscape:connector-curvature="0"
+        />
+      </g
+      >
+      <path
+          id="path4415-1"
+          style="fill:url(#radialGradient4893)"
+          d="m144.61 82.411c-11.54 148.79-29.01 328.43 188.01 471.01 217.03-142.58 199.55-322.22 188.02-471.01-72-0.88-131.65-9.684-188.02-58.986-56.37 49.302-116.01 58.106-188.01 58.987z"
+          inkscape:export-ydpi="300"
+          sodipodi:nodetypes="ccccc"
+          inkscape:export-filename="C:\Users\Gribba\Desktop\SVG Work\Shield_M_large.png"
+          inkscape:connector-curvature="0"
+          transform="translate(11.806 137.58)"
+          inkscape:export-xdpi="300"
+      />
+      <path
+          id="path4413-3"
+          style="stroke:#797979;stroke-width:6;fill:none"
+          d="m144.61 82.411c-11.54 148.79-29.01 328.43 188.01 471.01 217.03-142.58 199.55-322.22 188.02-471.01-72-0.88-131.65-9.684-188.02-58.986-56.37 49.302-116.01 58.106-188.01 58.987z"
+          inkscape:export-ydpi="300"
+          sodipodi:nodetypes="ccccc"
+          inkscape:export-filename="C:\Users\Gribba\Desktop\SVG Work\Shield_M_large.png"
+          inkscape:connector-curvature="0"
+          transform="translate(11.806 137.58)"
+          inkscape:export-xdpi="300"
+      />
+      <path
+          id="path4413"
+          style="stroke:url(#linearGradient4705);stroke-width:5;fill:none"
+          d="m144.61 82.411c-11.54 148.79-29.01 328.43 188.01 471.01 217.03-142.58 199.55-322.22 188.02-471.01-72-0.88-131.65-9.684-188.02-58.986-56.37 49.302-116.01 58.106-188.01 58.987z"
+          inkscape:export-ydpi="300"
+          sodipodi:nodetypes="ccccc"
+          inkscape:export-filename="C:\Users\Gribba\Desktop\SVG Work\Shield_M_large.png"
+          inkscape:connector-curvature="0"
+          transform="translate(11.806 137.58)"
+          inkscape:export-xdpi="300"
+      />
+      <g
+          id="g5308"
+          inkscape:export-ydpi="300"
+          inkscape:export-filename="C:\Users\Gribba\Desktop\SVG Work\Shield_M_large.png"
+          transform="translate(11.806 137.58)"
+          inkscape:export-xdpi="300"
+        >
+        <path
+            id="path4217-59-6"
+            sodipodi:rx="2.6973217"
+            sodipodi:ry="2.6973217"
+            style="fill:url(#radialGradient5039)"
+            sodipodi:type="arc"
+            d="m223.76 147.12a2.6973 2.6973 0 1 1 -5.3946 0 2.6973 2.6973 0 1 1 5.3946 0z"
+            transform="matrix(2.5 0 0 2.5 -220.03 -359.26)"
+            sodipodi:cy="147.11755"
+            sodipodi:cx="221.06311"
+        />
+        <path
+            id="path4217-59-6-5"
+            sodipodi:rx="2.6973217"
+            sodipodi:ry="2.6973217"
+            style="fill:url(#radialGradient5039)"
+            sodipodi:type="arc"
+            d="m223.76 147.12a2.6973 2.6973 0 1 1 -5.3946 0 2.6973 2.6973 0 1 1 5.3946 0z"
+            transform="matrix(2.5 0 0 2.5 -18.454 -297.36)"
+            sodipodi:cy="147.11755"
+            sodipodi:cx="221.06311"
+        />
+        <path
+            id="path4217-59-6-1"
+            sodipodi:rx="2.6973217"
+            sodipodi:ry="2.6973217"
+            style="fill:url(#radialGradient5039)"
+            sodipodi:type="arc"
+            d="m223.76 147.12a2.6973 2.6973 0 1 1 -5.3946 0 2.6973 2.6973 0 1 1 5.3946 0z"
+            transform="matrix(2.5 0 0 2.5 -420.45 -297.36)"
+            sodipodi:cy="147.11755"
+            sodipodi:cx="221.06311"
+        />
+        <path
+            id="path4217-59-6-1-2"
+            sodipodi:rx="2.6973217"
+            sodipodi:ry="2.6973217"
+            style="fill:url(#radialGradient5039)"
+            sodipodi:type="arc"
+            d="m223.76 147.12a2.6973 2.6973 0 1 1 -5.3946 0 2.6973 2.6973 0 1 1 5.3946 0z"
+            transform="matrix(2.5 0 0 2.5 -427.82 -154.15)"
+            sodipodi:cy="147.11755"
+            sodipodi:cx="221.06311"
+        />
+        <path
+            id="path4217-59-6-1-4"
+            sodipodi:rx="2.6973217"
+            sodipodi:ry="2.6973217"
+            style="fill:url(#radialGradient5039)"
+            sodipodi:type="arc"
+            d="m223.76 147.12a2.6973 2.6973 0 1 1 -5.3946 0 2.6973 2.6973 0 1 1 5.3946 0z"
+            transform="matrix(2.5 0 0 2.5 -390.43 18.045)"
+            sodipodi:cy="147.11755"
+            sodipodi:cx="221.06311"
+        />
+        <path
+            id="path4217-59-6-1-9"
+            sodipodi:rx="2.6973217"
+            sodipodi:ry="2.6973217"
+            style="fill:url(#radialGradient5039)"
+            sodipodi:type="arc"
+            d="m223.76 147.12a2.6973 2.6973 0 1 1 -5.3946 0 2.6973 2.6973 0 1 1 5.3946 0z"
+            transform="matrix(2.5 0 0 2.5 -220.03 203.97)"
+            sodipodi:cy="147.11755"
+            sodipodi:cx="221.06311"
+        />
+        <path
+            id="path4217-59-6-1-0"
+            sodipodi:rx="2.6973217"
+            sodipodi:ry="2.6973217"
+            style="fill:url(#radialGradient5039)"
+            sodipodi:type="arc"
+            d="m223.76 147.12a2.6973 2.6973 0 1 1 -5.3946 0 2.6973 2.6973 0 1 1 5.3946 0z"
+            transform="matrix(2.5 0 0 2.5 -49.086 18.045)"
+            sodipodi:cy="147.11755"
+            sodipodi:cx="221.06311"
+        />
+        <path
+            id="path4217-59-6-1-92"
+            sodipodi:rx="2.6973217"
+            sodipodi:ry="2.6973217"
+            style="fill:url(#radialGradient5039)"
+            sodipodi:type="arc"
+            d="m223.76 147.12a2.6973 2.6973 0 1 1 -5.3946 0 2.6973 2.6973 0 1 1 5.3946 0z"
+            transform="matrix(2.5 0 0 2.5 -11.243 -153.69)"
+            sodipodi:cy="147.11755"
+            sodipodi:cx="221.06311"
+        />
+      </g
+      >
+      <path
+          id="path7215"
+          style="opacity:.9;stroke:#482e00;stroke-width:1px;fill:url(#radialGradient7264)"
+          d="m403.64 573.24c-24.372-4.4764-45.031-14.519-58.546-35.209-13.515 20.689-34.174 30.732-58.546 35.209 23.181-47.243 37.676-94.485 39.709-143.6-37.709 1.4474-74.132 15.938-110.55 39.11 3.4512-24.363 11.194-45.014 27.145-58.524-15.951-13.51-23.694-34.161-27.145-58.524 36.423 23.172 72.845 37.662 110.55 39.153-2.0326-49.07-16.528-96.312-39.709-143.55 24.372 4.4764 45.031 14.519 58.546 35.209 13.515-20.689 34.174-30.732 58.546-35.209-23.181 47.243-37.676 94.485-39.877 143.55 37.541-1.4908 73.963-15.981 110.39-39.153-3.4512 24.363-11.194 45.014-27.145 58.524 15.951 13.51 23.694 34.161 27.145 58.524-36.423-23.172-72.845-37.662-110.39-39.11 2.2009 49.113 16.696 96.356 39.877 143.6z"
+          inkscape:export-ydpi="300"
+          sodipodi:nodetypes="ccccccccccccccccc"
+          inkscape:export-filename="C:\Users\Gribba\Desktop\SVG Work\Shield_M_large.png"
+          inkscape:connector-curvature="0"
+          inkscape:export-xdpi="300"
+      />
+      <path
+          id="path4217-59-6-1-9-8"
+          sodipodi:rx="2.6973217"
+          sodipodi:ry="2.6973217"
+          style="fill:url(#radialGradient5039)"
+          sodipodi:cy="147.11755"
+          sodipodi:type="arc"
+          d="m223.76 147.12a2.6973 2.6973 0 1 1 -5.3946 0 2.6973 2.6973 0 1 1 5.3946 0z"
+          inkscape:export-ydpi="300"
+          inkscape:export-filename="C:\Users\Gribba\Desktop\SVG Work\Shield_M_large.png"
+          transform="matrix(9.0172 0 0 9.0164 -1648.5 -916.2)"
+          inkscape:export-xdpi="300"
+          sodipodi:cx="221.06311"
+      />
+    </g
+    >
+  </g
+  >
+  <metadata
+    >
+    <rdf:RDF
+      >
+      <cc:Work
+        >
+        <dc:format
+          >image/svg+xml</dc:format
+        >
+        <dc:type
+            rdf:resource="http://purl.org/dc/dcmitype/StillImage"
+        />
+        <cc:license
+            rdf:resource="http://creativecommons.org/licenses/publicdomain/"
+        />
+        <dc:publisher
+          >
+          <cc:Agent
+              rdf:about="http://openclipart.org/"
+            >
+            <dc:title
+              >Openclipart</dc:title
+            >
+          </cc:Agent
+          >
+        </dc:publisher
+        >
+        <dc:title
+          >Classic Medieval Shield</dc:title
+        >
+        <dc:date
+          >2012-03-31T14:56:30</dc:date
+        >
+        <dc:description
+          >Classic Medieval Shield</dc:description
+        >
+        <dc:source
+          >https://openclipart.org/detail/169239/classic-medieval-shield-by-gribba</dc:source
+        >
+        <dc:creator
+          >
+          <cc:Agent
+            >
+            <dc:title
+              >Gribba</dc:title
+            >
+          </cc:Agent
+          >
+        </dc:creator
+        >
+        <dc:subject
+          >
+          <rdf:Bag
+            >
+            <rdf:li
+              >Classic Medieval Shield</rdf:li
+            >
+            <rdf:li
+              >Medieval Shield</rdf:li
+            >
+            <rdf:li
+              >Shield</rdf:li
+            >
+          </rdf:Bag
+          >
+        </dc:subject
+        >
+      </cc:Work
+      >
+      <cc:License
+          rdf:about="http://creativecommons.org/licenses/publicdomain/"
+        >
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Reproduction"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Distribution"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
+        />
+      </cc:License
+      >
+    </rdf:RDF
+    >
+  </metadata
+  >
+</svg
+>

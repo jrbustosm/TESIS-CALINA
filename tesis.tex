@@ -1,0 +1,118 @@
+% Template:     Informe LaTeX
+% Documento:    Archivo principal
+% Versión:      7.2.6 (24/06/2021)
+% Codificación: UTF-8
+
+% CREACIÓN DEL DOCUMENTO
+\documentclass[oneside]{book}
+
+% INFORMACIÓN DEL DOCUMENTO
+\def\titulotesis {Construcción de una aplicación gamificada que usa juegos de rol para el desarrollo 
+de actividades escolares}
+\def\titulocortotesis {CALINA, Tesis de Maestría} 
+\def\autordeldocumento {José Ricardo Bustos Molina}
+\def\nombreuniversidad {Universidad del Tolima}
+\def\nombrefacultad {Maestría en Pedagogía y Mediaciones Tecnológicas}
+\def\tituloaobtener {Magister en pedagogía y mediaciones tecnológicas}
+\def\departamentouniversidad {Instituto de Educación a Distancia - IDEAD}
+\def\imagendepartamento {departamentos/UT}
+\def\localizacionuniversidad {Ibagué, Tolima}
+\def\asesordeldocumento {Ivan Andres Blanco Polania}
+\def\titulodelasesor {Ing. Electrónico, M. Sc.}
+\def\palabrasclave {gamificación, narración de historias, story telling, aplicación móvil, juegos de Rol, RPG}
+
+% IMPORTACIÓN DEL TEMPLATE
+\input{template}
+
+% INICIO DE PÁGINAS
+\begin{document}
+
+\renewcommand{\contentsname}{Índice de Contenidos} % Nombre del índice
+\renewcommand{\figurename}{Figura}                 % Nombre de la leyenda de las fig.
+\renewcommand{\listfigurename}{Índice de Figuras}  % Nombre del índice de figuras
+\renewcommand{\listtablename}{Índice de Tablas}    % Nombre del índice de tablas
+\renewcommand{\refname}{Referencias}               % Nombre de las referencias (bibtex)
+\renewcommand{\tablename}{Tabla}                   % Nombre de la leyenda de tablas
+\renewcommand{\BOthers}[1]{et al.\hbox{}}          % "et al" en lugar de "y colaboradores"
+
+\pagenumbering{gobble}          % QUITAR NUMERACIÓN
+% ------------------------------------------------------------------------------
+\pagestyle{fancy}               % ENCABEZADO PORTADA
+\fancyhf{}
+\rhead{\includegraphics[width=1.5cm]{\imagendepartamento}}
+\lhead{\nombreuniversidad\\\nombrefacultad\\\departamentouniversidad}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{0pt}
+% ------------------------------------------------------------------------------
+
+\input{preambulo}
+\clearpage % Salto de página
+
+\pagenumbering{roman}           % INICIAR NUMERACIÓN ROMANA
+% ------------------------------------------------------------------------------
+\fancyhf{}                      % ENCABEZADO PARA PAGINAS DE RESUMEN Y TABLAS DE CONTENIDO
+\rhead{\thepage}
+% ------------------------------------------------------------------------------
+\input{dedicatoria}
+\clearpage % Salto de página
+\input{agradecimientos}
+\clearpage % Salto de página
+\input{resumen}
+\clearpage % Salto de página
+
+% TABLA DE CONTENIDOS - ÍNDICE
+% ------------------------------------------------------------------------------
+\fancypagestyle{plain}{         % ENCABEZADO PARA LA PRIMERA PÁGINA DE LAS TABLAS DE CONTENIDO
+  \rhead{\thepage}
+}  
+% ------------------------------------------------------------------------------
+\tableofcontents
+\listoftables
+\listoffigures
+\clearpage % Salto de página
+
+\pagenumbering{arabic}          % INICIAR NUMERACIÓN
+
+% ------------------------------------------------------------------------------
+\pagestyle{fancy}               % ENCABEZADO Y PIE DE PÁGINA PARA EL DOCUMENTO
+\fancyhf{}
+\rhead{\thepage}
+\lhead{\leftmark}
+\rfoot{\autordeldocumento}
+\lfoot{\titulocortotesis}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+% ------------------------------------------------------------------------------
+
+\input{introduccion}
+\clearpage % Salto de página
+\input{estadodelarte}
+\clearpage % Salto de página
+\input{marcoteorico}
+\clearpage % Salto de página
+\input{metodologia}
+\clearpage % Salto de página
+\input{propuesta}
+\clearpage % Salto de página
+\input{propuesta_pedagogica}
+\clearpage % Salto de página
+\input{resultados}
+\clearpage % Salto de página
+\input{conclusiones}
+
+% ------------------------------------------------------------------------------
+% REFERENCIAS (ESTILO APA)
+% ------------------------------------------------------------------------------
+\clearpage % Salto de página
+\lhead{Referencias}
+\bibliography{bibliografia_tesis}
+
+% ------------------------------------------------------------------------------
+% ANEXOS
+% ------------------------------------------------------------------------------
+\clearpage % Salto de página
+\lhead{Anexos}
+\input{anexos}
+
+% FIN DEL DOCUMENTO
+\end{document}

@@ -1,0 +1,242 @@
+<svg width="268" height="251" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient x1="0.09938" x2="0.90159" y1="-0.06887" y2="1.06913" id="imagebot_41">
+   <stop offset="0" stop-color="#CDCDCD"/>
+   <stop offset="0.2474" stop-color="#fff"/>
+   <stop offset="0.5684" stop-color="#fff"/>
+   <stop offset="0.8842" stop-color="#686868"/>
+   <stop offset="0.9947"/>
+  </linearGradient>
+  <linearGradient x1="0.30297" x2="0.84716" y1="0.47732" y2="-0.24759" id="imagebot_40">
+   <stop offset="0" stop-color="#A7A7A7"/>
+   <stop offset="0.5" stop-color="#fff"/>
+  </linearGradient>
+  <radialGradient r="36.787" cx="185.67" cy="108.44" gradientUnits="userSpaceOnUse" id="imagebot_39">
+   <stop offset="0" stop-color="#767676"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <linearGradient x1="0" x2="1" y1="0.5" y2="0.5" id="imagebot_38">
+   <stop offset="0.2947"/>
+   <stop offset="0.3211" stop-color="#4B4B4B"/>
+   <stop offset="1" stop-color="#fff"/>
+  </linearGradient>
+  <linearGradient x1="1" x2="0" y1="0.49991" y2="0.49991" id="imagebot_37">
+   <stop offset="0.1737" stop-color="#fff"/>
+   <stop offset="0.6947" stop-color="#767676"/>
+   <stop offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0.00024" x2="1" y1="0.50053" y2="0.50053" id="imagebot_36">
+   <stop offset="0" stop-color="#A7A7A7"/>
+   <stop offset="0.5" stop-color="#fff"/>
+  </linearGradient>
+  <linearGradient x1="0.42358" x2="0.83534" y1="0.27434" y2="1.31969" id="imagebot_35">
+   <stop offset="0" stop-color="#fff"/>
+   <stop offset="1" stop-color="#585858"/>
+  </linearGradient>
+  <linearGradient x1="0.25069" x2="0.57858" y1="0.20431" y2="0.85243" id="imagebot_34">
+   <stop offset="0" stop-color="#fff"/>
+   <stop offset="0.3316" stop-color="#C5C5C5"/>
+   <stop offset="0.3368" stop-color="#B6B6B6"/>
+   <stop offset="1" stop-color="#959595"/>
+  </linearGradient>
+  <linearGradient x1="0.22067" x2="0.84407" y1="0.35919" y2="0.74481" id="imagebot_33">
+   <stop offset="0" stop-color="#595959"/>
+   <stop offset="1" stop-color="#fff"/>
+  </linearGradient>
+  <linearGradient x1="0.06479" x2="0.5694" y1="0.45824" y2="0.50027" id="imagebot_32">
+   <stop offset="0" stop-color="#A7A7A7"/>
+   <stop offset="1" stop-color="#fff"/>
+  </linearGradient>
+  <linearGradient x1="0.10807" x2="0.60301" y1="0.83247" y2="0.36501" id="imagebot_31">
+   <stop offset="0" stop-color="#898989"/>
+   <stop offset="1" stop-color="#fff"/>
+  </linearGradient>
+  <linearGradient x1="0.19925" x2="0.79507" y1="0.95901" y2="0.1698" id="imagebot_30">
+   <stop offset="0" stop-color="#A7A7A7"/>
+   <stop offset="0.5" stop-color="#fff"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y1="0.49995" y2="0.49995" id="imagebot_29">
+   <stop offset="0" stop-color="#595959"/>
+   <stop offset="1" stop-color="#fff"/>
+  </linearGradient>
+  <linearGradient x1="0.47849" x2="0.6372" y1="0.94555" y2="0.09023" id="imagebot_28">
+   <stop offset="0" stop-color="#A7A7A7"/>
+   <stop offset="0.5" stop-color="#fff"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y1="0.50034" y2="0.50034" id="imagebot_27">
+   <stop offset="0" stop-color="#5A5A5A"/>
+   <stop offset="1" stop-color="#fff"/>
+  </linearGradient>
+  <linearGradient x1="0.0658" x2="0.88419" y1="0.01334" y2="0.88181" id="imagebot_26">
+   <stop offset="0" stop-color="#fff"/>
+   <stop offset="0.0632" stop-color="#494949"/>
+   <stop offset="0.1316" stop-color="#2D2D2D"/>
+   <stop offset="0.1421" stop-color="#595959"/>
+   <stop offset="1" stop-color="#fff"/>
+  </linearGradient>
+  <radialGradient r="55.122" cx="66.894" cy="164.93" gradientUnits="userSpaceOnUse" id="imagebot_25">
+   <stop offset="0" stop-color="#fff"/>
+   <stop offset="0.9947"/>
+  </radialGradient>
+  <linearGradient x1="0.42451" x2="0.67039" y1="0.00242" y2="0.99851" id="imagebot_24">
+   <stop offset="0" stop-color="#fff"/>
+   <stop offset="0.3737" stop-color="#878787"/>
+   <stop offset="0.3842" stop-color="#595959"/>
+   <stop offset="1" stop-color="#fff"/>
+  </linearGradient>
+  <linearGradient x1="-0.01108" x2="0.97736" y1="0.9087" y2="0.04009" id="imagebot_23">
+   <stop offset="0" stop-color="#515151"/>
+   <stop offset="0.6947" stop-color="#fff"/>
+  </linearGradient>
+  <linearGradient x1="0.07689" x2="0.66297" y1="0.02291" y2="0.80784" id="imagebot_22">
+   <stop offset="0" stop-color="#fff"/>
+   <stop offset="0.2895" stop-color="#B0B0B0"/>
+   <stop offset="0.3" stop-color="#8C8C8C"/>
+   <stop offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0.16203" x2="1.22549" y1="0.03569" y2="0.75272" id="imagebot_21">
+   <stop offset="0.1756"/>
+   <stop offset="0.1895" stop-color="#595959"/>
+   <stop offset="1" stop-color="#fff"/>
+  </linearGradient>
+  <linearGradient x1="0.5" x2="0.5" y1="1" y2="0" id="imagebot_20">
+   <stop offset="0" stop-color="#515151"/>
+   <stop offset="0.6947" stop-color="#fff"/>
+  </linearGradient>
+  <linearGradient x1="0.49958" x2="0.49958" y1="0" y2="1" id="imagebot_19">
+   <stop offset="0" stop-color="#A7A7A7"/>
+   <stop offset="0.5" stop-color="#fff"/>
+  </linearGradient>
+  <linearGradient x1="0.46149" x2="0.73664" y1="0.15963" y2="1.08481" id="imagebot_18">
+   <stop offset="0" stop-color="#545454"/>
+   <stop offset="1" stop-color="#fff"/>
+  </linearGradient>
+  <linearGradient x1="-0.2433" x2="0.65896" y1="0.08743" y2="0.99851" id="imagebot_17">
+   <stop offset="0" stop-color="#767676"/>
+   <stop offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y1="0.49997" y2="0.49997" id="imagebot_16">
+   <stop offset="0" stop-color="#2B2B2B"/>
+   <stop offset="1" stop-color="#fff"/>
+  </linearGradient>
+  <linearGradient x1="0.72156" x2="0.01066" y1="0.45671" y2="0.59539" id="imagebot_15">
+   <stop offset="0" stop-color="#fff"/>
+   <stop offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0.41552" x2="0.93464" y1="0.23067" y2="0.92658" id="imagebot_14">
+   <stop offset="0" stop-color="#fff"/>
+   <stop offset="1" stop-color="#585858"/>
+  </linearGradient>
+  <linearGradient x1="0.38133" x2="0.65404" y1="0.91248" y2="0.00785" id="imagebot_13">
+   <stop offset="0" stop-color="#515151"/>
+   <stop offset="0.6947" stop-color="#fff"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="0.99985" y1="0.4999" y2="0.4999" id="imagebot_12">
+   <stop offset="0" stop-color="#515151"/>
+   <stop offset="0.6947" stop-color="#fff"/>
+  </linearGradient>
+  <linearGradient x1="1" x2="0" y1="0.50006" y2="0.50006" id="imagebot_11">
+   <stop offset="0.4842" stop-color="#fff"/>
+   <stop offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0.48374" x2="0.74455" y1="0.40641" y2="0.7599" id="imagebot_10">
+   <stop offset="0" stop-color="#fff"/>
+   <stop offset="0.9947"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y1="0.50028" y2="0.50028" id="imagebot_9">
+   <stop offset="0" stop-color="#2E2E2E"/>
+   <stop offset="1" stop-color="#fff"/>
+  </linearGradient>
+  <radialGradient r="32.649" cx="59.918" cy="74.006" gradientUnits="userSpaceOnUse" id="imagebot_8">
+   <stop offset="0" stop-color="#fff"/>
+   <stop offset="0.9947"/>
+  </radialGradient>
+  <linearGradient x1="-0.04705" x2="0.92626" y1="0.37656" y2="0.8802" id="imagebot_7">
+   <stop offset="0.1737" stop-color="#fff"/>
+   <stop offset="0.6947" stop-color="#767676"/>
+   <stop offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0.4988" x2="0.5027" y1="0.03082" y2="0.92704" id="imagebot_6">
+   <stop offset="0.2579" stop-color="#fff"/>
+   <stop offset="0.7579" stop-color="#767676"/>
+   <stop offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0.29263" x2="0.70608" y1="-0.13151" y2="0.95781" id="imagebot_5">
+   <stop offset="0" stop-color="#767676"/>
+   <stop offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0.23511" x2="0.86462" y1="0.98387" y2="-0.16622" id="imagebot_4">
+   <stop offset="0" stop-color="#A7A7A7"/>
+   <stop offset="0.5" stop-color="#fff"/>
+  </linearGradient>
+  <linearGradient x1="0.43197" x2="0.53229" y1="0.74767" y2="0.06057" id="imagebot_3">
+   <stop offset="0" stop-color="#898989"/>
+   <stop offset="1" stop-color="#fff"/>
+  </linearGradient>
+  <linearGradient x1="-0.07369" x2="1.28672" y1="0.08475" y2="0.84664" id="imagebot_2">
+   <stop offset="0" stop-color="#fff"/>
+   <stop offset="0.0684"/>
+   <stop offset="0.1756"/>
+   <stop offset="0.1895" stop-color="#595959"/>
+   <stop offset="1" stop-color="#fff"/>
+  </linearGradient>
+ </defs>
+ <g id="imagebot_44">
+  <title>imagebot_44</title>
+ </g>
+ <g fill="none" stroke-miterlimit="10" display="none" stroke="#000" id="imagebot_43">
+  <polygon id="imagebot_47" fill="none" stroke-miterlimit="10" display="none" stroke="#000" points="93.892 68.589 156.95 86.237 212.17 84.081 228.64 62.352 195.38 35.414 133.63 17.918 75.719 20.74 60.772 42.11"/>
+  <polyline id="imagebot_48" fill="none" stroke-miterlimit="10" display="none" stroke="#000" points="75.719 20.74 51.272 39.053 37.507 51.986 21.595 86.861 19.17 77.726 37.507 51.986 51.272 39.053 60.772 42.11 59.543 74.1 59.543 74.1 67.083 114.67 53.996 112.22 45.421 100.78 33.076 96.131 21.595 86.861 106.02 232.35 236.52 138.37 208.92 144.54 184.79 108.04 188.28 140.2 184.61 149.24 106.02 232.35 42.454 111.22 45.421 100.78 59.446 74.109 33.076 96.131 26.754 90.882 21.595 86.861 59.495 73.896 93.892 68.589 150.16 138.37 127.9 139.22 108.62 127.16 85.921 126.91 86.546 127.16 67.083 114.67 156.95 86.237 223.5 138.37 236.52 138.37 242.47 126.91 248.53 124.79 242.47 126.91 229.71 91.496 245.52 105.02 229.71 91.496 212.17 84.081 150.16 138.37 150.16 138.32 169.12 144.46 188.28 140.2 208.92 144.54 223.5 138.37 229.71 91.496 228.64 62.352 237.96 77.52 246.73 109.45 248.53 124.79 236.52 138.37 220.53 146.46 140.81 195.5 148.42 147.79 106.02 191.14 67.083 125.02 53.996 112.22 42.454 111.22 33.076 96.131 27.77 97.502 27.77 97.502 77.439 178.12 67.083 125.02 67.083 124.79 85.898 126.99 106.02 138.32 127.9 139.22 148.42 147.79 169.12 144.47 184.61 149.24 208.9 144.39 220.53 146.46 168.83 187.12 106.02 232.35 106.02 138.32 108.62 127.16 118.05 98.547"/>
+  <title>imagebot_43</title>
+ </g>
+ <g id="imagebot_1">
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_50" fill="url(#imagebot_41)" points="93.892 68.589 156.95 86.237 212.17 84.081 228.64 62.352 195.38 35.414 133.63 17.918 75.719 20.74 60.772 42.11"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_51" fill="url(#imagebot_40)" points="212.17 84.081 184.79 108.04 156.95 86.237"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_52" fill="url(#imagebot_39)" points="184.79 108.04 188.28 140.2 208.9 144.39"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_53" fill="url(#imagebot_38)" points="184.79 108.04 150.16 138.32 169.12 144.46 188.28 140.2"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_54" fill="url(#imagebot_37)" points="150.16 138.32 127.9 139.22 108.62 127.16 118.05 98.547"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_55" fill="url(#imagebot_36)" points="127.9 139.22 148.42 147.79 169.12 144.46 150.16 138.32"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_56" fill="#EFEFEF" points="127.9 139.22 106.02 138.32 85.921 126.91 108.62 127.16"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_57" fill="url(#imagebot_35)" points="169.12 144.47 184.61 149.24 208.9 144.39 188.28 140.2"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_58" fill="url(#imagebot_34)" points="118.05 98.547 93.892 68.589 59.495 73.896 67.083 114.67"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_59" fill="url(#imagebot_33)" points="60.772 42.11 51.272 39.053 37.507 51.986 21.595 86.861 59.495 73.896 60.731 43.14"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_60" fill="url(#imagebot_32)" points="37.507 51.986 19.17 77.726 21.595 86.861"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_61" fill="url(#imagebot_31)" points="21.595 86.861 33.076 96.131 59.495 73.896"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_62" fill="url(#imagebot_30)" points="33.076 96.131 45.421 100.78 59.495 73.896"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_63" fill="url(#imagebot_29)" points="27.77 97.502 33.076 96.131 21.595 86.861"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_64" fill="url(#imagebot_28)" points="67.083 114.67 59.495 73.896 45.421 100.78 53.996 112.22"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_65" fill="url(#imagebot_27)" points="85.898 126.99 67.083 125.02 53.996 112.22 67.083 114.67"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_66" fill="url(#imagebot_26)" points="27.77 97.502 77.439 178.12 42.454 111.22 33.076 96.131"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_67" fill="url(#imagebot_25)" points="106.02 232.35 27.77 97.502 77.439 178.12"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_68" fill="url(#imagebot_24)" points="106.02 191.14 67.083 125.02 77.439 178.12 106.02 232.35"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_69" fill="url(#imagebot_23)" points="148.42 147.79 140.81 195.5 106.02 232.35 106.02 191.14"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_70" fill="url(#imagebot_22)" points="106.02 138.32 106.02 191.14 148.42 147.79 127.9 139.22"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_71" fill="url(#imagebot_21)" points="67.083 125.02 85.898 126.99 106.02 138.32 106.02 191.14"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_72" fill="url(#imagebot_20)" points="148.42 147.79 169.12 144.46 184.61 149.24 140.81 195.5"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_73" fill="#EFEFEF" points="208.92 144.54 223.44 138.32 236.52 138.37 220.53 146.46"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_74" fill="url(#imagebot_19)" points="242.47 126.91 236.52 138.37 248.53 124.79"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_75" fill="url(#imagebot_18)" points="223.44 138.32 184.79 108.04 212.17 84.081 229.71 91.496"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_76" fill="url(#imagebot_17)" points="242.47 126.91 229.71 91.496 223.44 138.32 236.52 138.37"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_77" fill="url(#imagebot_16)" points="228.64 62.352 229.71 91.496 212.17 84.081"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_78" fill="url(#imagebot_15)" points="245.52 105.02 229.71 91.496 228.64 62.352 237.96 77.52"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_79" fill="url(#imagebot_14)" points="246.73 109.45 248.53 124.79 242.47 126.91 229.71 91.496 245.52 105.02"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_80" fill="url(#imagebot_13)" points="220.53 146.46 140.81 195.5 184.61 149.24 208.92 144.54"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_81" fill="url(#imagebot_12)" points="236.52 138.37 220.53 146.46 168.83 187.12"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_82" fill="url(#imagebot_11)" points="106.02 232.35 168.83 187.12 220.53 146.46 140.81 195.5"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_83" fill="url(#imagebot_10)" points="51.272 39.053 60.772 42.11 75.719 20.74"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_84" fill="url(#imagebot_9)" points="33.076 96.131 45.421 100.78 53.996 112.22 42.454 111.22"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_85" fill="url(#imagebot_8)" points="59.495 73.896 93.892 68.589 60.772 42.11"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_86" fill="url(#imagebot_7)" points="156.95 86.237 118.05 98.547 93.892 68.589"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_87" fill="url(#imagebot_6)" points="118.05 98.547 156.95 86.237 184.79 108.04 150.16 138.32"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_88" fill="url(#imagebot_5)" points="184.79 108.04 223.44 138.32 208.92 144.54"/>
+  <line transform="translate(-0.003 0.003)" id="imagebot_89" fill="url(#imagebot_4)" y2="114.67" x1="118.05" x2="67.083" y1="98.547"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_90" fill="url(#imagebot_3)" points="108.62 127.16 85.921 126.91 67.083 114.67 118.05 98.547"/>
+  <polygon transform="translate(-0.003 0.003)" id="imagebot_91" fill="url(#imagebot_2)" points="53.996 112.22 42.454 111.22 77.439 178.12 67.083 125.02"/>
+  <title>imagebot_1</title>
+ </g>
+ <metadata>image/svg+xmlOpenclipartdiamond2013-09-10T02:04:21A diamondhttps://openclipart.org/detail/183273/diamond-by-belier-183273belierBijouxGemGet marriedJewelrydiamantdiamondgemstonesmarierrichesse</metadata>
+ <g id="imagebot_42">
+  <polygon opacity="0.28" transform="translate(-0.003 0.003)" id="imagebot_49" fill="#7f00ff" points="246.73 109.45 237.96 77.52 228.64 62.352 195.38 35.414 133.63 17.918 75.719 20.74 51.272 39.053 37.507 51.986 19.17 77.726 21.595 86.861 106.02 232.35 236.52 138.37 248.53 124.79"/>
+  <title>imagebot_42</title>
+ </g>
+</svg>

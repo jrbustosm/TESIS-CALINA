@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   height="288.01062mm"
+   width="361.90811mm"
+   viewBox="0 0 1282.3516 1020.5101"
+   id="svg2"
+   version="1.1"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="item360.svg"
+   inkscape:export-filename="/home/algot/Documents/runeman.org/clipart/eclipse.png"
+   inkscape:export-xdpi="24.564247"
+   inkscape:export-ydpi="24.564247"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <title
+     id="title3415">Eclipse</title>
+  <defs
+     id="defs8">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter3391"
+       x="-0.37199998"
+       width="1.744"
+       y="-0.37199998"
+       height="1.744">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="107.36832"
+         id="feGaussianBlur3393" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter3411"
+       x="-0.013001477"
+       width="1.026003"
+       y="-0.010727273"
+       height="1.0214545">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="8.4440562"
+         id="feGaussianBlur3413" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="719"
+     id="namedview6"
+     showgrid="false"
+     inkscape:zoom="0.17467908"
+     inkscape:cx="581.06557"
+     inkscape:cy="469.43229"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm" />
+  <metadata
+     id="metadata4">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Eclipse</dc:title>
+        <dc:date>2017-09-05</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Algot Runeman</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Algot Runeman</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:publisher>
+          <cc:Agent>
+            <dc:title>runeman.org</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:identifier>eclipse.svg</dc:identifier>
+        <dc:description>Word of the &quot;solunar&quot;</dc:description>
+        <cc:license
+           rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/" />
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <path
+     style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter3411)"
+     d="m -2043.7478,222.26855 103.0461,-1013.28674 -51.5231,778.570599 137.3948,-291.963979 c 0,0 -137.3948,618.27666 -137.3948,589.65274 0,-28.62392 417.3588,-875.89193 417.3588,-875.89193 l -331.4135,784.29539 394.9366,-452.25793 -498.0562,492.33141 555.304,-217.541782 -561.0288,269.064842 635.451,11.44957 -578.2032,28.27521 688.5586,426.28285 -715.2308,-508.15363 341.5354,637.52352 c 0,0 -406.4597,-606.82709 -406.4597,-578.20317 l -114.4957,-870.16714 74.4222,801.46973 -240.4409,-664.07492 177.4683,612.55187 -354.9366,-446.53314 389.2853,532.4049 -709.8732,-320.587899 681.2493,332.037469 -561.0289,-74.42219 c 0,0 1007.562,120.22046 652.6254,120.22046 -354.9366,0 -692.6988,166.01873 -692.6988,166.01873 l 664.0749,-166.01873 -543.8545,538.12968 555.304,-475.15706 -200.3674,520.95533 280.5144,-566.7536 80.147,755.67149 -45.7983,-795.74498 0,-5.72478"
+     id="path3182"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccscccccccccccccccccccccsccccccccc"
+     transform="matrix(0.58638743,0,0,0.58638743,1826.1759,386.63344)" />
+  <circle
+     r="346.34943"
+     cy="276.65399"
+     cx="-2035.1606"
+     id="circle3186"
+     style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter3391)"
+     transform="matrix(0.58638743,0,0,0.58638743,1826.1759,386.63344)" />
+  <circle
+     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="path3180"
+     cx="632.78345"
+     cy="548.85986"
+     r="203.09496" />
+</svg>

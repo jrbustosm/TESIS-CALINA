@@ -1,0 +1,642 @@
+% Keys for rectangle with inverted corners
+%
+% /pgf/rectangle with inverted corners selected : specify the corners to invert.
+% /pgf/rectangle with inverted corners radius   : set the radius of the corners.
+
+\makeatletter
+\pgfkeys{/pgf/rectangle with inverted corners selected/.store in=\pgf@lib@sh@misc@convrect@corners}
+\pgfkeys{/tikz/rectangle with inverted corners selected/.store in=\pgf@lib@sh@misc@convrect@corners}
+
+\def\pgf@lib@sh@misc@convrect@invertall{invert all}%
+\def\pgf@lib@sh@misc@convrect@invert{invert}
+\let\pgf@lib@sh@misc@convrect@corners\pgf@lib@sh@misc@convrect@invertall
+
+
+\def\pgf@lib@sh@misc@convrect@getcorners{%
+  \let\northeastcorner\pgfutil@empty%
+  \let\southeastcorner\pgfutil@empty%
+  \let\southwestcorner\pgfutil@empty%
+  \let\northwestcorner\pgfutil@empty%
+  \expandafter\pgfutil@in@\expandafter{\pgf@lib@sh@misc@convrect@corners}{invert all}%
+  \ifpgfutil@in@%
+    \let\northeastcorner\pgf@lib@sh@misc@convrect@invert%
+    \let\southeastcorner\pgf@lib@sh@misc@convrect@invert%
+    \let\southwestcorner\pgf@lib@sh@misc@convrect@invert%
+    \let\northwestcorner\pgf@lib@sh@misc@convrect@invert%
+    \let\pgf@next\relax%
+  \else%
+    \let\pgf@next\pgf@lib@sh@misc@convrect@parsecorners%
+  \fi%
+  \pgf@next}
+
+\def\pgf@lib@sh@misc@convrect@parsecorners{%
+  \expandafter\pgf@@concaverectangle@parsecorners\pgf@lib@sh@misc@convrect@corners,\pgf@stop,%
+}
+
+\def\pgf@@concaverectangle@parsecorners#1,{%
+  \ifx#1\pgf@stop%
+    \let\pgf@next\relax%
+  \else%
+    \pgfutil@in@{@#1@}{@north east@@top left@}%
+    \ifpgfutil@in@%
+      \let\northeastcorner\pgf@lib@sh@misc@convrect@invert%
+    \else%
+      \pgfutil@in@{@#1@}{@south east@@bottom right@}%
+      \ifpgfutil@in@%
+        \let\southeastcorner\pgf@lib@sh@misc@convrect@invert%
+      \else%
+        \pgfutil@in@{@#1@}{@south west@@bottom left@}%
+        \ifpgfutil@in@%
+          \let\southwestcorner\pgf@lib@sh@misc@convrect@invert%
+        \else%
+          \pgfutil@in@{@#1@}{@north west@@top right@}%
+          \ifpgfutil@in@%
+            \let\northwestcorner\pgf@lib@sh@misc@convrect@invert%
+          \fi%
+        \fi%
+      \fi%
+    \fi%
+    \let\pgf@next\pgf@@@concaverectangle@parsecorners%
+  \fi%
+  \pgf@next%
+}
+\def\pgf@@@concaverectangle@parsecorners{%
+  \pgfutil@ifnextchar x{\pgf@@concaverectangle@parsecorners}{\pgf@@concaverectangle@parsecorners}%
+}%
+
+\pgfkeys{/pgf/.cd,
+  rectangle with inverted corners radius/.initial=.666ex%
+}
+
+
+
+
+% Shape rectangle with inverted corners.
+%
+%
+\pgfdeclareshape{rectangle with inverted corners}{%
+  \savedmacro\getconcaverectanglepoints{%
+    \pgf@lib@sh@misc@convrect@getcorners%
+    %
+    % Get the node dimensions.
+    %
+    \pgfmathsetlength\pgf@xa{\pgfkeysvalueof{/pgf/inner xsep}}%
+    \advance\pgf@xa.5\wd\pgfnodeparttextbox%
+    \pgfmathsetlength\pgf@ya{\pgfkeysvalueof{/pgf/inner ysep}}%
+    \advance\pgf@ya.5\ht\pgfnodeparttextbox%
+    \advance\pgf@ya.5\dp\pgfnodeparttextbox%
+    %
+    % Get invert stuff.
+    %
+    \pgfmathsetlengthmacro\convsep{\pgfkeysvalueof{/pgf/rectangle with inverted corners radius}}%
+    \pgfmathsetlength\pgf@xc{\convsep/sqrt(2)}%
+    \pgfmathsetlength\pgf@yc{\convsep/sqrt(2)}%
+    \addtosavedmacro\convsep%
+    %
+    % Check for minimum width and height%
+    %
+    \pgfutil@tempdima\pgf@xa%
+    \advance\pgfutil@tempdima\convsep%
+    \pgfmathsetlength\pgfutil@tempdimb{\pgfkeysvalueof{/pgf/minimum width}}%
+    \ifdim\pgfutil@tempdima<.5\pgfutil@tempdimb%
+      \pgf@xa.5\pgfutil@tempdimb%
+    \fi%
+    \pgfutil@tempdima\pgf@ya%
+    \advance\pgfutil@tempdima\convsep%
+    \pgfmathsetlength\pgfutil@tempdimb{\pgfkeysvalueof{/pgf/minimum height}}%
+    \ifdim\pgfutil@tempdima<.5\pgfutil@tempdimb%
+      \pgf@ya.5\pgfutil@tempdimb%
+    \fi%
+    %
+    % Define the background path points.
+    %
+    \pgfextract@process\centerpoint{%
+      \pgfmathsetlength\pgf@x{+.5\wd\pgfnodeparttextbox}%
+      \pgfmathsetlength\pgf@y{+.5\ht\pgfnodeparttextbox}%
+      \pgfmathaddtolength\pgf@y{+-.5\dp\pgfnodeparttextbox}%
+    }%
+    \pgfextract@process\beforenortheast{%
+      \centerpoint%
+      \advance\pgf@x\pgf@xa%
+      \advance\pgf@y\pgf@ya%
+      \advance\pgf@y-\convsep%
+    }%
+    \pgfextract@process\northeast{%
+      \centerpoint%
+      \advance\pgf@x\pgf@xa%
+      \advance\pgf@y\pgf@ya%
+      \ifx\northeastcorner\pgfutil@empty%
+      \else
+        \advance\pgf@x-\pgf@xc%
+        \advance\pgf@y-\pgf@yc%
+      \fi%
+    }%
+    \pgfextract@process\afternortheast{%
+      \centerpoint%
+      \advance\pgf@x\pgf@xa%
+      \advance\pgf@x-\convsep%
+      \advance\pgf@y\pgf@ya%
+    }%
+    \pgfextract@process\beforenorthwest{%
+      \centerpoint%
+      \advance\pgf@x-\pgf@xa%
+      \advance\pgf@x\convsep%
+      \advance\pgf@y\pgf@ya%
+    }%
+    \pgfextract@process\northwest{%
+      \centerpoint%
+      \advance\pgf@x-\pgf@xa%
+      \advance\pgf@y\pgf@ya%
+      \ifx\northwestcorner\pgfutil@empty%
+      \else
+        \advance\pgf@x\pgf@xc%
+        \advance\pgf@y-\pgf@yc%
+      \fi%
+    }%
+    \pgfextract@process\afternorthwest{%
+      \centerpoint%
+      \advance\pgf@x-\pgf@xa%
+      \advance\pgf@y\pgf@ya%
+      \advance\pgf@y-\convsep%
+    }%
+    \pgfextract@process\beforesouthwest{%
+      \centerpoint%
+      \advance\pgf@x-\pgf@xa%
+      \advance\pgf@y-\pgf@ya%
+      \advance\pgf@y\convsep%
+    }%
+    \pgfextract@process\southwest{%
+      \centerpoint%
+      \advance\pgf@x-\pgf@xa%
+      \advance\pgf@y-\pgf@ya%
+      \ifx\southwestcorner\pgfutil@empty%
+      \else
+        \advance\pgf@x\pgf@xc%
+        \advance\pgf@y\pgf@yc%
+      \fi%
+    }%
+    \pgfextract@process\aftersouthwest{%
+      \centerpoint%
+      \advance\pgf@x-\pgf@xa%
+      \advance\pgf@x\convsep%
+      \advance\pgf@y-\pgf@ya%
+    }%
+    \pgfextract@process\beforesoutheast{%
+      \centerpoint%
+      \advance\pgf@x\pgf@xa%
+      \advance\pgf@x-\convsep%
+      \advance\pgf@y-\pgf@ya%
+    }%
+    \pgfextract@process\southeast{%
+      \centerpoint%
+      \advance\pgf@x\pgf@xa%
+      \advance\pgf@y-\pgf@ya%
+      \ifx\southeastcorner\pgfutil@empty%
+      \else
+        \advance\pgf@x-\pgf@xc%
+        \advance\pgf@y\pgf@yc%
+      \fi%
+    }%
+    \pgfextract@process\aftersoutheast{%
+      \centerpoint%
+      \advance\pgf@x\pgf@xa%
+      \advance\pgf@y-\pgf@ya%
+      \advance\pgf@y\convsep%
+    }%
+    \addtosavedmacro\beforenortheast%
+    \addtosavedmacro\afternortheast%
+    \addtosavedmacro\beforesouthwest%
+    \addtosavedmacro\aftersouthwest%
+    %
+    % Calculate the `miter' vectors.
+    %
+    \pgfmathsetlengthmacro\outerxsep{\pgfkeysvalueof{/pgf/outer xsep}}%
+    \pgfmathsetlengthmacro\outerysep{\pgfkeysvalueof{/pgf/outer ysep}}%
+    \addtosavedmacro\outerxsep%
+    \addtosavedmacro\outerysep%
+    \pgfextract@process\before@ne@anchor{%
+      \beforenortheast%
+      \advance\pgf@x\outerxsep%
+      \advance\pgf@y\outerysep%
+    }%
+    \pgfextract@process\before@sw@anchor{%
+      \beforesouthwest%
+      \advance\pgf@x-\outerxsep%
+      \advance\pgf@y-\outerysep%
+    }%
+    \pgfextract@process\after@ne@anchor{%
+      \afternortheast%
+      \advance\pgf@x\outerxsep%
+      \advance\pgf@y\outerysep%
+    }%
+    \pgfextract@process\after@sw@anchor{%
+      \aftersouthwest
+      \advance\pgf@x-\outerxsep%
+      \advance\pgf@y-\outerysep%
+    }%
+    \addtosavedmacro\before@ne@anchor%
+    \addtosavedmacro\after@ne@anchor%
+    \addtosavedmacro\before@sw@anchor%
+    \addtosavedmacro\after@sw@anchor%
+    \pgfextract@process\ne@anchor{%
+      \northeast%
+      \ifx\northeastcorner\pgfutil@empty%
+        \pgfmathaddtolength\pgf@x{\pgfkeysvalueof{/pgf/outer xsep}}%
+        \pgfmathaddtolength\pgf@y{\pgfkeysvalueof{/pgf/outer ysep}}%
+      \else%
+        \pgfmathaddtolength\pgf@x{\pgfkeysvalueof{/pgf/outer xsep}/sqrt(2)}%
+        \pgfmathaddtolength\pgf@y{\pgfkeysvalueof{/pgf/outer ysep}/sqrt(2)}%
+      \fi%
+    }%
+    \pgfextract@process\nw@anchor{%
+      \northwest%
+      \ifx\northwestcorner\pgfutil@empty%
+        \pgfmathaddtolength\pgf@x{-\pgfkeysvalueof{/pgf/outer xsep}}%
+        \pgfmathaddtolength\pgf@y{\pgfkeysvalueof{/pgf/outer ysep}}%
+      \else%
+        \pgfmathaddtolength\pgf@x{-\pgfkeysvalueof{/pgf/outer xsep}/sqrt(2)}%
+        \pgfmathaddtolength\pgf@y{\pgfkeysvalueof{/pgf/outer ysep}/sqrt(2)}%
+      \fi%
+    }%
+    \pgfextract@process\sw@anchor{%
+      \southwest%
+      \ifx\southwestcorner\pgfutil@empty%
+        \pgfmathaddtolength\pgf@x{-\pgfkeysvalueof{/pgf/outer xsep}}%
+        \pgfmathaddtolength\pgf@y{-\pgfkeysvalueof{/pgf/outer ysep}}%
+      \else%
+        \pgfmathaddtolength\pgf@x{-\pgfkeysvalueof{/pgf/outer xsep}/sqrt(2)}%
+        \pgfmathaddtolength\pgf@y{-\pgfkeysvalueof{/pgf/outer ysep}/sqrt(2)}%
+      \fi%
+    }%
+    \pgfextract@process\se@anchor{%
+      \southeast%
+      \ifx\southeastcorner\pgfutil@empty%
+        \pgfmathaddtolength\pgf@x{\pgfkeysvalueof{/pgf/outer xsep}}%
+        \pgfmathaddtolength\pgf@y{-\pgfkeysvalueof{/pgf/outer ysep}}%
+      \else%
+        \pgfmathaddtolength\pgf@x{\pgfkeysvalueof{/pgf/outer xsep}/sqrt(2)}%
+        \pgfmathaddtolength\pgf@y{-\pgfkeysvalueof{/pgf/outer ysep}/sqrt(2)}%
+      \fi%
+    }%
+    \addtosavedmacro\ne@anchor%
+    \addtosavedmacro\nw@anchor%
+    \addtosavedmacro\sw@anchor%
+    \addtosavedmacro\se@anchor%
+    \addtosavedmacro\northwestcorner
+    \addtosavedmacro\northeastcorner
+    \addtosavedmacro\southwestcorner
+    \addtosavedmacro\southeastcorner
+  }%
+  \savedanchor\centerpoint{%
+    \pgf@x.5\wd\pgfnodeparttextbox%
+    \pgf@y.5\ht\pgfnodeparttextbox%
+    \advance\pgf@y-.5\dp\pgfnodeparttextbox%
+  }%
+  \savedanchor\midpoint{%
+    \pgf@x.5\wd\pgfnodeparttextbox%
+    \pgfmathsetlength\pgf@y{+.5ex}%
+  }%
+  \savedanchor\basepoint{%
+    \pgf@x.5\wd\pgfnodeparttextbox%
+    \pgf@y0pt%
+  }%
+  \anchor{center}{\centerpoint}%
+  \anchor{mid}{\midpoint}%
+  \anchor{mid east}{%
+    \getconcaverectanglepoints%
+    \midpoint%
+    \pgf@ya\pgf@y%
+    \pgf@process{%
+      \before@sw@anchor%
+      \pgf@ya\pgf@y%
+      \before@ne@anchor%
+      \pgf@y\pgf@ya
+    }%
+    \ifdim\pgf@ya<\pgf@y%
+      \pgfpointintersectionoflines{\midpoint}{\midpoint\pgf@ya\pgf@y\before@ne@anchor\pgf@y\pgf@ya}%
+        {\before@sw@anchor\pgf@ya\pgf@y\before@ne@anchor\pgf@y\pgf@ya}%
+        {\after@sw@anchor\pgf@ya\pgf@y\after@ne@anchor\pgf@y\pgf@ya}%
+    \else%
+      \pgf@process{\before@ne@anchor}%
+      \ifdim\pgf@ya<\pgf@y%
+        \pgfpointintersectionoflines{\midpoint}{\midpoint\pgf@ya\pgf@y\before@ne@anchor\pgf@y\pgf@ya}%
+          {\before@sw@anchor\pgf@ya\pgf@y\before@ne@anchor\pgf@y\pgf@ya}%
+          {\before@ne@anchor}%
+      \else%
+        \pgfpointintersectionoflines{\midpoint}{\midpoint\pgf@ya\pgf@y\before@ne@anchor\pgf@y\pgf@ya}%
+          {\before@ne@anchor}%
+          {\after@ne@anchor}%
+      \fi%
+    \fi%
+  }%
+  \anchor{mid west}{%
+    \getconcaverectanglepoints%
+    \midpoint%
+    \pgf@ya\pgf@y%
+    \pgf@process{\before@sw@anchor}%
+    \ifdim\pgf@ya<\pgf@y%
+      \pgfpointintersectionoflines{\midpoint}{\midpoint\pgf@ya\pgf@y\before@sw@anchor\pgf@y\pgf@ya}%
+        {\before@sw@anchor}{\after@sw@anchor}%
+    \else%
+      \pgf@process{\before@ne@anchor\pgf@ya\pgf@y\before@sw@anchor\pgf@y\pgf@ya}%
+      \ifdim\pgf@ya<\pgf@y%
+        \pgfpointintersectionoflines{\midpoint}{\midpoint\pgf@ya\pgf@y\before@sw@anchor\pgf@y\pgf@ya}%
+          {\before@ne@anchor\pgf@ya\pgf@y\before@sw@anchor\pgf@y\pgf@ya}%
+          {\before@sw@anchor}%
+      \else%
+        \pgfpointintersectionoflines{\midpoint}{\midpoint\pgf@ya\pgf@y\before@sw@anchor\pgf@y\pgf@ya}%
+          {\before@ne@anchor\pgf@ya\pgf@y\before@sw@anchor\pgf@y\pgf@ya}%
+          {\after@ne@anchor\pgf@ya\pgf@y\after@sw@anchor\pgf@y\pgf@ya}%
+      \fi%
+    \fi%
+  }%
+  \anchor{base}{\basepoint}%
+  \anchor{base east}{%
+    \getconcaverectanglepoints%
+    \basepoint%
+    \pgf@ya\pgf@y%
+    \pgf@process{%
+      \before@sw@anchor%
+      \pgf@ya\pgf@y%
+      \before@ne@anchor%
+      \pgf@y\pgf@ya
+    }%
+    \ifdim\pgf@ya<\pgf@y%
+      \pgfpointintersectionoflines{\basepoint}{\basepoint\pgf@ya\pgf@y\before@ne@anchor\pgf@y\pgf@ya}%
+        {\before@sw@anchor\pgf@ya\pgf@y\before@ne@anchor\pgf@y\pgf@ya}%
+        {\after@sw@anchor\pgf@ya\pgf@y\after@ne@anchor\pgf@y\pgf@ya}%
+    \else%
+      \pgf@process{\before@ne@anchor}%
+      \ifdim\pgf@ya<\pgf@y%
+        \pgfpointintersectionoflines{\basepoint}{\basepoint\pgf@ya\pgf@y\before@ne@anchor\pgf@y\pgf@ya}%
+          {\before@sw@anchor\pgf@ya\pgf@y\before@ne@anchor\pgf@y\pgf@ya}%
+          {\before@ne@anchor}%
+      \else%
+        \pgfpointintersectionoflines{\basepoint}{\basepoint\pgf@ya\pgf@y\before@ne@anchor\pgf@y\pgf@ya}%
+          {\before@ne@anchor}%
+          {\after@ne@anchor}%
+      \fi%
+    \fi%
+  }%
+  \anchor{base west}{%
+    \getconcaverectanglepoints%
+    \basepoint%
+    \pgf@ya\pgf@y%
+    \pgf@process{\before@sw@anchor}%
+    \ifdim\pgf@ya<\pgf@y%
+      \pgfpointintersectionoflines{\basepoint}{\basepoint\pgf@ya\pgf@y\before@sw@anchor\pgf@y\pgf@ya}%
+        {\before@sw@anchor}{\after@sw@anchor}%
+    \else%
+      \pgf@process{\before@ne@anchor\pgf@ya\pgf@y\before@sw@anchor\pgf@y\pgf@ya}%
+      \ifdim\pgf@ya<\pgf@y%
+        \pgfpointintersectionoflines{\basepoint}{\basepoint\pgf@ya\pgf@y\before@sw@anchor\pgf@y\pgf@ya}%
+          {\before@ne@anchor\pgf@ya\pgf@y\before@sw@anchor\pgf@y\pgf@ya}%
+          {\before@sw@anchor}%
+      \else%
+        \pgfpointintersectionoflines{\basepoint}{\basepoint\pgf@ya\pgf@y\before@sw@anchor\pgf@y\pgf@ya}%
+          {\before@ne@anchor\pgf@ya\pgf@y\before@sw@anchor\pgf@y\pgf@ya}%
+          {\after@ne@anchor\pgf@ya\pgf@y\after@sw@anchor\pgf@y\pgf@ya}%
+      \fi%
+    \fi%
+  }%
+  \anchor{before north east}{\getconcaverectanglepoints\before@ne@anchor}%
+  \anchor{north east}{\getconcaverectanglepoints\ne@anchor}%
+  \anchor{after north east}{\getconcaverectanglepoints\after@ne@anchor}%
+  \anchor{north}{%
+    \getconcaverectanglepoints%
+    \centerpoint%
+    \pgf@xa\pgf@x%
+    \after@ne@anchor%
+    \pgf@x\pgf@xa}%
+  \anchor{before north west}{%
+    \getconcaverectanglepoints%
+    \after@sw@anchor%
+    \pgf@xa\pgf@x%
+    \after@ne@anchor%
+    \pgf@x\pgf@xa}%
+  \anchor{north west}{\getconcaverectanglepoints\nw@anchor}%
+  \anchor{after north west}{%
+    \getconcaverectanglepoints%
+    \before@sw@anchor%
+    \pgf@xa\pgf@x%
+    \before@ne@anchor%
+    \pgf@x\pgf@xa}%
+  \anchor{west}{%
+    \getconcaverectanglepoints%
+    \centerpoint%
+    \pgf@ya\pgf@y%
+    \before@sw@anchor%
+    \pgf@y\pgf@ya}%
+  \anchor{before south west}{\getconcaverectanglepoints\before@sw@anchor}%
+  \anchor{south west}{\getconcaverectanglepoints\sw@anchor}%
+  \anchor{after south west}{\getconcaverectanglepoints\after@sw@anchor}%
+    \anchor{south}{%
+    \getconcaverectanglepoints%
+    \centerpoint%
+    \pgf@xa\pgf@x%
+    \after@sw@anchor%
+    \pgf@x\pgf@xa}%
+  \anchor{before south east}{%
+    \getconcaverectanglepoints%
+    \after@sw@anchor%
+    \pgf@ya\pgf@y%
+    \after@ne@anchor%
+    \pgf@y\pgf@ya}%
+  \anchor{south east}{\getconcaverectanglepoints\se@anchor}%
+  \anchor{after south east}{%
+    \getconcaverectanglepoints%
+    \before@sw@anchor%
+    \pgf@ya\pgf@y%
+    \before@ne@anchor%
+    \pgf@y\pgf@ya}%
+  \anchor{east}{%
+    \getconcaverectanglepoints%
+    \centerpoint%
+    \pgf@ya\pgf@y%
+    \before@ne@anchor%
+    \pgf@y\pgf@ya}%
+  \backgroundpath{%
+    \pgfpathmoveto{\beforenortheast}%
+    \ifx\northeastcorner\pgfutil@empty%
+      \pgfpathlineto{\northeast}%
+    \else%
+      \pgfpatharc{-90}{-180}{\convsep}%
+    \fi%
+    \pgfpathlineto{\beforenorthwest}%
+    \ifx\northwestcorner\pgfutil@empty%
+      \pgfpathlineto{\northwest}%
+    \else%
+      \pgfpatharc{0}{-90}{\convsep}%
+    \fi%
+    \pgfpathlineto{\beforesouthwest}%
+    \ifx\southwestcorner\pgfutil@empty%
+      \pgfpathlineto{\southwest}%
+    \else%
+      \pgfpatharc{90}{0}{\convsep}%
+    \fi%
+    \pgfpathlineto{\beforesoutheast}%
+    \ifx\southeastcorner\pgfutil@empty%
+      \pgfpathlineto{\southeast}%
+    \else%
+      \pgfpatharc{180}{90}{\convsep}%
+    \fi%
+    \pgfpathclose%
+    %
+  }
+  \anchorborder{%
+    \pgfextract@process\externalpoint{%
+      \pgf@xa\pgf@x%
+      \pgf@ya\pgf@y%
+      \centerpoint%
+      \advance\pgf@x\pgf@xa%
+      \advance\pgf@y\pgf@ya%
+    }%
+    \pgfmathanglebetweenpoints{\centerpoint}{\externalpoint}%
+    \let\externalangle\pgfmathresult%
+    \getconcaverectanglepoints%
+    \pgfmathanglebetweenpoints{\centerpoint}{\before@ne@anchor\pgf@xa\pgf@x\before@sw@anchor\pgf@x\pgf@xa}%
+    \ifdim\externalangle pt<\pgfmathresult pt\relax% < after south east.
+      \pgfmathanglebetweenpoints{\centerpoint}{\after@ne@anchor\pgf@xa\pgf@x\after@sw@anchor\pgf@x\pgf@xa}%
+      \ifdim\externalangle pt<\pgfmathresult pt\relax% < before south east.
+        \pgfmathanglebetweenpoints{\centerpoint}{\after@sw@anchor}%
+        \ifdim\externalangle pt<\pgfmathresult pt\relax% < after south west.
+          \pgfmathanglebetweenpoints{\centerpoint}{\before@sw@anchor}%
+          \ifdim\externalangle pt<\pgfmathresult pt\relax% < before south west.
+            \pgfmathanglebetweenpoints{\centerpoint}{\before@sw@anchor\pgf@xa\pgf@x\before@ne@anchor\pgf@x\pgf@xa}%
+            \ifdim\externalangle pt<\pgfmathresult pt\relax% < after north west.
+              \pgfmathanglebetweenpoints{\centerpoint}{\after@sw@anchor\pgf@xa\pgf@x\after@ne@anchor\pgf@x\pgf@xa}%
+              \ifdim\externalangle pt<\pgfmathresult pt\relax% < before north west.
+                \pgfmathanglebetweenpoints{\centerpoint}{\after@ne@anchor}%
+                \ifdim\externalangle pt<\pgfmathresult pt\relax% < after north east.
+                  \pgfmathanglebetweenpoints{\centerpoint}{\before@ne@anchor}%
+                  \ifdim\externalangle pt<\pgfmathresult pt\relax% < before north east.
+                    % east side (> 0°)
+                    \pgfpointintersectionoflines{\centerpoint}{\externalpoint}%
+                      {\before@ne@anchor\pgf@xa\pgf@x\before@sw@anchor\pgf@x\pgf@xa}{\before@ne@anchor}%
+                  \else%
+                    % top right corner
+                    \ifx\northeastcorner\pgfutil@empty\relax%
+                      % rectangle corner
+                      \pgfmathanglebetweenpoints{\centerpoint}{\ne@anchor}%
+                      \ifdim\externalangle pt<\pgfmathresult pt\relax% < north east.
+                        % intersect with east side
+                        \pgfpointintersectionoflines{\centerpoint}{\externalpoint}%
+                          {\before@ne@anchor\pgf@xa\pgf@x\before@sw@anchor\pgf@x\pgf@xa}{\before@ne@anchor}%
+                      \else% > north west
+                        % intersect with north side
+                        \pgfpointintersectionoflines{\centerpoint}{\externalpoint}%
+                          {\after@ne@anchor}{\after@sw@anchor\pgf@xa\pgf@x\after@ne@anchor\pgf@x\pgf@xa}%
+                      \fi%
+                    \else%
+                      % inverted corner
+                      \pgfextract@process\arccenter{%
+                        \beforenortheast%
+                        \pgf@xa\pgf@x%
+                        \afternortheast%
+                        \pgf@x\pgf@xa%
+                      }%
+                      \pgfmathpointintersectionoflineandarc{\externalpoint}{\centerpoint}%
+                        {\arccenter}{-80}{-190}{\convsep-\outerxsep and \convsep-\outerysep}%
+                    \fi%
+                  \fi%
+                \else%
+                  % north side
+                  \pgfpointintersectionoflines{\centerpoint}{\externalpoint}%
+                    {\after@ne@anchor}{\after@sw@anchor\pgf@xa\pgf@x\after@ne@anchor\pgf@x\pgf@xa}%
+                \fi%
+              \else%
+                % top left corner
+                \ifx\northwestcorner\pgfutil@empty\relax%
+                  % rectangle corner
+                  \pgfmathanglebetweenpoints{\centerpoint}{\nw@anchor}%
+                  \ifdim\externalangle pt<\pgfmathresult pt\relax% < north west.
+                    % intersect with north side
+                    \pgfpointintersectionoflines{\centerpoint}{\externalpoint}%
+                      {\after@ne@anchor}{\after@sw@anchor\pgf@xa\pgf@x\after@ne@anchor\pgf@x\pgf@xa}%
+                  \else% > north west
+                    % intersect with west side
+                    \pgfpointintersectionoflines{\centerpoint}{\externalpoint}%
+                      {\before@sw@anchor\pgf@xa\pgf@x\before@ne@anchor\pgf@x\pgf@xa}{\before@sw@anchor}%
+                  \fi%
+                \else%
+                  % inverted corner
+                  \pgfextract@process\arccenter{%
+                    \beforesouthwest%
+                    \pgf@xa\pgf@x%
+                    \afternortheast%
+                    \pgf@x\pgf@xa%
+                  }%
+                  \pgfmathpointintersectionoflineandarc{\externalpoint}{\centerpoint}%
+                    {\arccenter}{10}{-100}{\convsep-\outerxsep and \convsep-\outerysep}%
+                \fi%
+              \fi%
+            \else%
+              % west side
+              \pgfpointintersectionoflines{\centerpoint}{\externalpoint}%
+                {\before@sw@anchor\pgf@xa\pgf@x\before@ne@anchor\pgf@x\pgf@xa}{\before@sw@anchor}%
+            \fi%
+          \else%
+            % bottom left corner
+            \ifx\southwestcorner\pgfutil@empty\relax%
+              % rectangle corner
+              \pgfmathanglebetweenpoints{\centerpoint}{\sw@anchor}%
+              \ifdim\externalangle pt<\pgfmathresult pt\relax% < south west.
+                % intersect with west side
+                \pgfpointintersectionoflines{\centerpoint}{\externalpoint}%
+                  {\before@sw@anchor\pgf@xa\pgf@x\before@ne@anchor\pgf@x\pgf@xa}{\before@sw@anchor}%
+              \else% > north west
+                % intersect with south side
+                \pgfpointintersectionoflines{\centerpoint}{\externalpoint}%
+                  {\after@sw@anchor}{\after@ne@anchor\pgf@xa\pgf@x\after@sw@anchor\pgf@x\pgf@xa}%
+              \fi%
+            \else%
+              % inverted corner
+              \pgfextract@process\arccenter{%
+                \beforesouthwest%
+                \pgf@xa\pgf@x%
+                \aftersouthwest%
+                \pgf@x\pgf@xa%
+              }%
+              \pgfmathpointintersectionoflineandarc{\externalpoint}{\centerpoint}%
+                {\arccenter}{100}{-10}{\convsep-\outerxsep and \convsep-\outerysep}%
+            \fi%
+          \fi%
+        \else%
+          % south side
+          \pgfpointintersectionoflines{\centerpoint}{\externalpoint}%
+            {\after@sw@anchor}{\after@ne@anchor\pgf@xa\pgf@x\after@sw@anchor\pgf@x\pgf@xa}%
+        \fi%
+      \else%
+        % bottom right corner
+        \ifx\southeastcorner\pgfutil@empty\relax%
+          % rectangle corner
+          \pgfmathanglebetweenpoints{\centerpoint}{\se@anchor}%
+          \ifdim\externalangle pt<\pgfmathresult pt\relax% < south east.
+            % intersect with south side
+            \pgfpointintersectionoflines{\centerpoint}{\externalpoint}%
+              {\after@sw@anchor}{\after@ne@anchor\pgf@xa\pgf@x\after@sw@anchor\pgf@x\pgf@xa}%
+          \else% > north west
+            % intersect with east side
+            \pgfpointintersectionoflines{\centerpoint}{\externalpoint}%
+              {\before@ne@anchor\pgf@xa\pgf@x\before@sw@anchor\pgf@x\pgf@xa}{\before@ne@anchor}%
+          \fi%
+        \else%
+          % inverted corner
+          \pgfextract@process\arccenter{%
+            \aftersouthwest%
+            \pgf@ya\pgf@y%
+            \beforenortheast%
+            \pgf@y\pgf@ya%
+          }%
+          \pgfmathpointintersectionoflineandarc{\externalpoint}{\centerpoint}%
+            {\arccenter}{190}{80}{\convsep-\outerxsep and \convsep-\outerysep}%
+        \fi%
+      \fi%
+    \else%
+      % east side (< 0°)
+      \pgfpointintersectionoflines{\centerpoint}{\externalpoint}%
+        {\before@ne@anchor\pgf@xa\pgf@x\before@sw@anchor\pgf@x\pgf@xa}{\before@ne@anchor}%
+    \fi%
+  }%
+}
+\makeatother

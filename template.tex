@@ -1,0 +1,223 @@
+% Template:     Tesis LaTeX UT
+% Versión:      1.0 (12/01/2022)
+% Codificación: UTF-8
+%
+% Autor: Jose Ricardo Bustos Molina.
+%        Maestría en pedagogía y mediaciones tecnológicas
+%        Universidad del Tolima
+%        jrbustosm@ut.edu.co
+
+% Codificación
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} % Caracteres acentuados
+\inputencoding{utf8}
+
+% Carga el idioma
+\usepackage[spanish,es-nosectiondot,es-lcroman,es-noquoting]{babel}
+
+% -----------------------------------------------------------------------------
+% Paquetes para dependencias
+% -----------------------------------------------------------------------------
+\usepackage{float}         % Administrador de posiciones de objetos, permite poner imágenes donde son creadas
+\usepackage{datetime}      % Fechas
+\usepackage{lipsum}        % Permite crear párrafos de prueba
+\usepackage{rotating}      % Permite rotación de objetos
+\usepackage{url}           % Permite añadir enlaces
+\usepackage{color}         % Colores
+\usepackage{amsmath}       % Manejo de ecuaciones matemáticas
+\usepackage{verbatim}      % Para comentar y mostrar también código
+\usepackage{afterpage}     % Para ejecutar comandos en la siguiente pagina
+\usepackage{ifthen}
+\usepackage{xcolor}       % utilidades para manejo de colores
+\usepackage{stackengine}  % Para apilar objetos, y ubicarlos
+
+% -----------------------------------------------------------------------------
+% Configuración de margenes y tamaño de página
+% -----------------------------------------------------------------------------
+\usepackage{adjustbox}     % Para hacer cajas para ajustar los objetos y re-dimensionarlos
+\usepackage{varwidth}      % Similar a minipage 
+\usepackage{geometry}
+\geometry{letterpaper, margin=1in, portrait} %includehead, includefoot
+
+% -----------------------------------------------------------------------------
+% Configuración de tamaño y estilo de la fuente del documento
+% -----------------------------------------------------------------------------
+\usepackage{scrextend}       % Paquete complejo de scripts koma, lo uso solo para cambiar tamaño de fuente
+\usepackage{setspace}        % Cambia el espacio entre líneas
+\usepackage[normalem]{ulem}  % Permite tachar y subrayar
+\usepackage{csquotes}        % Citas y comillas, se debe usar después de lineno [6.4.2]
+\usepackage{fontawesome}     % iconos nuevos 
+\usepackage{textcomp}        % Algunos símbolos de común uso
+\usepackage{ccicons}         % iconos de licencias creative commons
+\usepackage{helvet}          % Para Fuente Arial
+
+\renewcommand{\familydefault}{\sfdefault}    % tipo de fuente Arial
+\changefontsizes{12 pt}                      % Tamaño de la fuente
+\setlength{\parskip}{\baselineskip}          % Añade linea entre párrafos
+\renewcommand{\baselinestretch}{1.5}         % Interlineado
+
+% margen derecha en 1.27cm
+\makeatletter
+\renewenvironment*{displayquote}
+  {\begingroup\setlength{\leftmargini}{1.27cm}\csq@getcargs{\csq@bdquote{}{}}}
+  {\csq@edquote\endgroup}
+\makeatother
+
+% Remueve la margen derecha de las citas textuales
+\renewenvironment{quote}
+{\list{}{}%
+ \item\relax}
+{\endlist}
+
+\usepackage{hyphenat}          % Para enseñarle a partir las palabras
+\hyphenation{intera-cciones}
+\hyphenation{CALINA}
+
+% -----------------------------------------------------------------------------
+% Configuración de títulos de secciones
+% -----------------------------------------------------------------------------
+\renewcommand{\thesection}{\arabic{section}}   % Remueve el número de capitulo en las secciones
+\usepackage{sectsty}                           % Cambia fuente de los títulos de sección
+\usepackage{titlesec}                          % Administración de títulos
+\titlespacing{\section}{0pt}{0pt}{0pt}         % \titlespacing*{comando}{margen izquierdo}{espacio antes del titulo}{separación con el texto}
+\titlespacing{\subsection}{0pt}{0pt}{0pt}
+\titlespacing{\subsubsection}{0pt}{0pt}{0pt}
+\titlelabel{\thetitle.\quad}                   % Añade un punto a los títulos
+
+% -----------------------------------------------------------------------------
+% Configuración de tabla de contenidos
+% -----------------------------------------------------------------------------
+\usepackage{tocloft} % Maneja entradas en el índice
+\setlength\cftbeforesecskip{15pt}
+
+\usepackage{chngcntr}                  % Las Numeración de figuras y tablas es continua
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+\setcounter{tocdepth}{3}              % Sub sub secciones con numeración y en la tabla de contenidos
+\setcounter{secnumdepth}{3}
+
+% -----------------------------------------------------------------------------
+% Configuración de referencias y citas
+% -----------------------------------------------------------------------------
+\usepackage[pdfencoding=auto,psdextra]{hyperref} % Enlaces, referencias
+\hypersetup{ % Color y estilo de hiper-vínculos
+	hidelinks,
+	colorlinks=false,
+} 
+\usepackage[nottoc,notlof,notlot]{tocbibind}     % Para adicionar la bibliografía a la tabla de contenidos
+\usepackage{apacite}
+\bibliographystyle{apacite}
+
+% -----------------------------------------------------------------------------
+% Establece configuración manejo de imágenes
+% -----------------------------------------------------------------------------
+\usepackage{graphicx}                     % Propiedades extra para los gráficos
+%\usepackage{graphbox}                    % Extensión para centrar gráficos
+\usepackage[position=bottom]{subcaption}  % Permite usar sub-figuras
+\usepackage{wrapfig}                      % Posición de imágenes, alrededor del texto
+\graphicspath{{./img}}                    % Directorio por defecto
+
+\usepackage{tikz}                % Para Hacer gráficos
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows}
+\usetikzlibrary{scopes}
+\usetikzlibrary{shapes}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{patterns.images} % Requiere descargar de https://raw.githubusercontent.com/Qrrbrbirlbel/pgf/master/tikzlibrarypatterns.images.code.tex
+\usetikzlibrary{arrows.meta}
+%\usetikzlibrary{fadings}        % Hace lo mismo que patterns.images para poner fondos en las formas
+%ver https://tex.stackexchange.com/questions/566745/tikz-how-to-pass-an-image-by-a-filter
+\usepackage{pgfplots}            % Creación de gráficos
+\usepackage{pgf-pie}             % Creación de gráficos de pie
+\usepackage{byo-twemojis}        % Para creación de emojis, requiere instalación manual
+% Ejemplo de uso:
+%\setlength{\twemojiDefaultHeight}{4em}
+%\byoTwemoji{head; eyes normal; mouth laughing}
+
+\usepackage{pgf-umlsd}           % Diagramas de secuencia UML
+\usepackage{tikz-uml}            % Descargado de https://perso.ensta-paris.fr/~kielbasi/tikzuml/index.php
+\tikzumlset{fill object = white, fill call = gray!20}
+
+\usepackage{qrcode}
+
+% -----------------------------------------------------------------------------
+% Establece configuración encabezados y pie de páginas
+% -----------------------------------------------------------------------------
+\usepackage{fancyhdr}      % Encabezados y pie de páginas
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}              % asignar \leftmark en sección en lugar de capitulo
+
+% -----------------------------------------------------------------------------
+% Establece configuración de listas
+% -----------------------------------------------------------------------------
+%\usepackage{paralist}                % Agrega funciones para el manejo de listas
+\usepackage[inline]{enumitem}        % Permite mejorar enumeración ítems
+\setlist{nosep}                      % Todas las listas sin separación
+\setlist[itemize]{label=$\bullet$}   % Circulo relleno para las listas
+
+% -----------------------------------------------------------------------------
+% Establece configuración de Leyendas
+% -----------------------------------------------------------------------------
+\usepackage{caption}       % Leyendas
+\captionsetup{labelfont=bf, justification=justified, singlelinecheck=false, labelsep = period}
+\captionsetup[table]{skip=0pt}
+\captionsetup[subfigure]{justification=centering}
+
+% -----------------------------------------------------------------------------
+% Establece configuración y librerías para tablas
+% -----------------------------------------------------------------------------
+\usepackage{array}         % Nuevas características a las tablas
+\usepackage{bigstrut}      % permite mejorar unir filas en tablas y otras mejoras
+\usepackage{longtable}     % Permite utilizar tablas en varias hojas
+\usepackage{multirow}      % Agrega nuevas opciones a las tablas
+\usepackage{booktabs}      % Tablas bonitas - revisar
+\usepackage{tabularx}      % Otro entorno tabular
+\usepackage{makecell}      % Mejora de celdas
+%\usepackage{spreadtab}    % Para hacer hojas de cálculo
+
+% -----------------------------------------------------------------------------
+% Establece configuración y librerías manejo de páginas
+% -----------------------------------------------------------------------------
+\usepackage{pdflscape}     % Modo página horizontal de página
+
+% -----------------------------------------------------------------------------
+% Establece configuración y librerías manejo de pie de páginas
+% -----------------------------------------------------------------------------
+\usepackage[bottom,norule,hang]{footmisc}
+
+% -----------------------------------------------------------------------------
+% Establece configuración y librerías manejo de apéndices y glosario
+% -----------------------------------------------------------------------------
+\usepackage[toc]{appendix}
+\usepackage[acronym]{glossaries-extra}
+
+% -----------------------------------------------------------------------------
+% OTRAS
+% -----------------------------------------------------------------------------
+\usepackage[binary-units]{siunitx}	%Manejo de unidades de medida
+\usepackage[acronym]{glossaries-extra}	%Para el uso de acrónimos o siglas
+
+% -----------------------------------------------------------------------------
+% OTRAS
+% -----------------------------------------------------------------------------
+\usepackage{algpseudocode}              %Para pseudocódigo
+\usepackage{listings}			%Para código fuente
+\usepackage{amsthm}			%Para hacer definiciones y teoremas en matemáticas
+\usepackage{tcolorbox}			%Cajas de texto de colores
+\usepackage{dialogue}			%Hacer diálogos entre personas
+
+% -----------------------------------------------------------------------------
+% LIBRERÍAS PDF
+% -----------------------------------------------------------------------------
+\usepackage{pdfpages}      % Insertar pdfs en el documento
+\usepackage{hyperxmp}      % Etiquetas opcionales para el pdf compilado
+
+\hypersetup{%
+	pdftitle={\titulotesis},
+	pdfauthor={\autordeldocumento},
+	pdflang={es},
+	pdfkeywords={\palabrasclave},
+	pdfpublisher={\nombreuniversidad}
+}
+

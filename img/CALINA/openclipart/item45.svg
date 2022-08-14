@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="18.439075mm"
+   height="21.576054mm"
+   viewBox="0 0 18.439075 21.576054"
+   version="1.1"
+   id="svg2266"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="item45.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2268"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.48996914"
+     inkscape:cx="27.552756"
+     inkscape:cy="112.25197"
+     inkscape:window-width="1366"
+     inkscape:window-height="719"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2263">
+    <filter
+       id="filter5650"
+       height="1.2015078"
+       width="1.1989243"
+       y="-0.10075388"
+       x="-0.099462162"
+       inkscape:collect="always">
+      <feGaussianBlur
+         id="feGaussianBlur5652"
+         stdDeviation="6.5306771"
+         inkscape:collect="always" />
+    </filter>
+    <clipPath
+       id="clipPath9439"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path9441"
+         sodipodi:nodetypes="cccc"
+         style="fill:none;stroke:#000000;stroke-width:1px"
+         d="m 98.995,417.99 c 215.3,-119.37 317.78,-77.62 501.04,6.06 L 359.605,50.29 98.985,417.99 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath2158"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path2156"
+         sodipodi:nodetypes="cccc"
+         style="fill:none;stroke:#000000;stroke-width:1px"
+         d="m 98.995,417.99 c 215.3,-119.37 317.78,-77.62 501.04,6.06 L 359.605,50.29 98.985,417.99 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath2162"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path2160"
+         sodipodi:nodetypes="cccc"
+         style="fill:none;stroke:#000000;stroke-width:1px"
+         d="m 98.995,417.99 c 215.3,-119.37 317.78,-77.62 501.04,6.06 L 359.605,50.29 98.985,417.99 Z" />
+    </clipPath>
+    <filter
+       id="filter6162"
+       height="1.3155576"
+       width="1.3014702"
+       y="-0.15777879"
+       x="-0.15073508"
+       inkscape:collect="always">
+      <feGaussianBlur
+         id="feGaussianBlur6164"
+         stdDeviation="28.422881"
+         inkscape:collect="always" />
+    </filter>
+    <clipPath
+       id="clipPath2168"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path2166"
+         sodipodi:nodetypes="cccc"
+         style="fill:none;stroke:#000000;stroke-width:1px"
+         d="m 98.995,417.99 c 215.3,-119.37 317.78,-77.62 501.04,6.06 L 359.605,50.29 98.985,417.99 Z" />
+    </clipPath>
+    <filter
+       id="filter6006"
+       height="1.2063142"
+       width="1.1971038"
+       y="-0.10315712"
+       x="-0.098551888"
+       inkscape:collect="always">
+      <feGaussianBlur
+         id="feGaussianBlur6008"
+         stdDeviation="18.583123"
+         inkscape:collect="always" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-93.920462,-118.81197)">
+    <g
+       id="g6569"
+       transform="matrix(0.26458333,0,0,0.26458333,32.581271,25.430161)">
+      <ellipse
+         id="path6214"
+         style="fill:#22280b;filter:url(#filter5650)"
+         transform="matrix(0.36887,0,0,0.43629,36.03,132.02)"
+         cx="625.28442"
+         cy="599.81384"
+         rx="78.791901"
+         ry="77.781746" />
+      <ellipse
+         id="path6216"
+         style="opacity:0.93684;fill:#aa4400"
+         transform="matrix(0.11055,0,0,0.15038,227.73,317.78)"
+         cx="343.45187"
+         cy="488.69705"
+         rx="226.27417"
+         ry="216.17264" />
+      <ellipse
+         id="path6218"
+         style="opacity:0.93684;fill:#800080"
+         clip-path="url(#clipPath9439)"
+         transform="matrix(0.11055,0,0,0.15038,227.73,317.78)"
+         cx="343.45187"
+         cy="488.69705"
+         rx="226.27417"
+         ry="216.17264" />
+      <ellipse
+         id="path6220"
+         style="opacity:0.93684;fill:#808000"
+         clip-path="url(#clipPath9439)"
+         transform="matrix(0.11055,0,0,-0.15038,227.95,464.76)"
+         cx="343.45187"
+         cy="488.69705"
+         rx="226.27417"
+         ry="216.17264" />
+      <ellipse
+         id="path6222"
+         style="opacity:0.86316;fill:#d45500"
+         transform="matrix(0.33682,0,0,0.44314,55.566,127.53)"
+         cx="625.28442"
+         cy="599.81384"
+         rx="78.791901"
+         ry="77.781746" />
+      <ellipse
+         id="path6224"
+         style="opacity:0.94211;fill:#ffffff"
+         transform="matrix(0.48458,0.0503,-0.49884,0.88034,366.22,-209.48)"
+         cx="418.57144"
+         cy="633.07648"
+         rx="8.5714283"
+         ry="5" />
+      <ellipse
+         id="path6226"
+         style="opacity:0.63684;fill:#ffe6d5;filter:url(#filter6162)"
+         clip-path="url(#clipPath9439)"
+         transform="matrix(0.085542,-0.076817,-0.060905,-0.064455,256.68,434.78)"
+         cx="343.45187"
+         cy="488.69705"
+         rx="226.27417"
+         ry="216.17264" />
+      <ellipse
+         id="path6228"
+         style="opacity:0.42105;fill:#f4e3d7;fill-opacity:0.61688;filter:url(#filter6006)"
+         clip-path="url(#clipPath9439)"
+         transform="matrix(-0.063184,0.090389,-0.050635,-0.0696,315.9,400.69)"
+         cx="343.45187"
+         cy="488.69705"
+         rx="226.27417"
+         ry="216.17264" />
+    </g>
+  </g>
+</svg>

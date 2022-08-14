@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="27.55974mm"
+   height="52.035931mm"
+   viewBox="0 0 27.55974 52.035931"
+   version="1.1"
+   id="svg2270"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="chiken_thigh.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2272"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.4187009"
+     inkscape:cx="87.174401"
+     inkscape:cy="96.72776"
+     inkscape:window-width="1294"
+     inkscape:window-height="704"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2267" />
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-119.79114,-92.337715)">
+    <g
+       id="g2245"
+       transform="matrix(0.35277777,0,0,-0.35277777,99.011086,195.4397)">
+      <path
+         d="m 87.297,161.739 15.797,56.623 -16.168,4.51 -15.808,-56.665 c -0.349,0.148 -0.706,0.283 -1.08,0.388 -4.668,1.301 -9.507,-1.426 -10.809,-6.094 -1.302,-4.667 1.426,-9.507 6.093,-10.809 4.067,-1.134 8.263,0.792 10.137,4.395 -0.262,-4.052 2.331,-7.873 6.398,-9.008 4.667,-1.302 9.506,1.427 10.809,6.094 1.232,4.419 -1.151,8.987 -5.369,10.566"
+         style="fill:#f6d77a;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path11328"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 135.118,242.299 c -6.171,-22.119 -31.226,-56.635 -48.881,-51.709 -17.655,4.926 -21.224,47.426 -15.053,69.545 6.171,22.12 25.485,36.058 43.141,31.133 17.654,-4.926 26.964,-26.85 20.793,-48.969"
+         style="fill:#f7931e;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path11330"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 135.121,242.294 c -6.169,-22.112 -31.234,-56.633 -48.882,-51.709 -4.144,1.156 -7.519,4.391 -10.17,8.944 16.916,2.588 37.497,32.24 43.009,51.993 4.308,15.444 1.078,30.78 -7.274,40.322 0.838,-0.15 1.687,-0.34 2.525,-0.573 17.648,-4.924 26.963,-26.854 20.792,-48.977"
+         style="fill:#de841b;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path11332"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
+</svg>
