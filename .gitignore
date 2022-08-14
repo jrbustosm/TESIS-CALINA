@@ -1,0 +1,21 @@
+*.aux
+*.bbl
+*.blg
+*.log
+*.dvi
+*.ilg
+*.ind
+*.lof
+*.lot
+*.out
+*.ps
+*.toc
+*.swp
+ModeloCartaRenunciaCopyright.docx
+Referencias x Revisar/
+Referencias/
+bases_de_datos.txt
+tecnicas.anotations
+tesis.pdf
+tikzuml-v1.0-2016-03-29.tbz
+tikzuml-v1.0-2016-03-29/
