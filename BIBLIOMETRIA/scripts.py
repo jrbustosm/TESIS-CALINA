@@ -14,11 +14,6 @@ with open('keywords_count_lemmatize.txt', 'w') as writer:
 	for w in words:
 		writer.write(lmtzr.lemmatize(w)+"\n")
 
-IFS=$(echo -en "\n\b");
-for f in $(ls *.pdf); do 
-	pdftotext "$f" - | cut -d" " -f1 -n | sed '/^\s*$/d' | tr '[:upper:]' '[:lower:]' | sed '/[.,;]/d' | awk '{m7=m6; m6=m5; m5=m4; m4=m3; m3=m2; m2=m1; m1=$0; if(m4=="theory" || m4=="model"){print m7,m6,m5,m4,m3,m2,m1;}}'
-done
-
 import os
 from os import path
 from wordcloud import WordCloud
