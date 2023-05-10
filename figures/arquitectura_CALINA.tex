@@ -1,0 +1,22 @@
+\begin{tikzpicture}[
+		redondeado/.style={draw,align=left,rounded corners=.15cm,inner sep=10pt, minimum width=150pt}
+  	]
+	\node[redondeado, minimum width=200pt, minimum height=115pt] at (0,7.7) {};
+	\node[] at (-1.8,9.1) {\textbf{Capa de la UI}};
+	\node[redondeado](UI) at (0,8) {Elementos UI};
+	\node[redondeado](estado) at (0,6.5) {Soporte de Estados};
+
+	\node[redondeado](dominio) at (0,4.5) {\textbf{Capa de Dominio}};
+
+	\node[redondeado, minimum width=200pt, minimum height=115pt, fill=mydarkgray] at (0,1.2) {};
+	\node[] (temp) at (0,3.4) {};
+	\node[text=white] at (-1.8,2.6) {\textbf{Capa de Datos}};
+	\node[redondeado, text=white, draw=white] (repositorios) at (0,1.5) {Repositorios};
+	\node[redondeado, text=white, draw=white] (datos) at (0,0) {Fuentes de datos};
+
+	\draw[-triangle 90] (UI) edge (estado);
+	\draw[-triangle 90] (estado) edge (dominio);
+	\draw[-triangle 90] (dominio) edge (repositorios);
+	\draw[-triangle 90, white] (temp) edge (repositorios);
+	\draw[-triangle 90, white] (repositorios) edge (datos);
+\end{tikzpicture}

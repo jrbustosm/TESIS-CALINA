@@ -1,0 +1,19 @@
+\begin{tikzpicture}[
+		every node/.append style={circle,draw=gray!80,align=center,minimum width=80pt,very thin}
+  	]
+	\node[] (A) at (-5,3.5) {
+		\textbf{Autonomía}
+	};
+	\node[] (C) at (0,3.5) {
+		\textbf{Competencia}
+	};
+	\node[] (R) at (5,3.5){
+		\textbf{Relaciones}\\\textbf{Humanas}
+	};
+	\node[] (M) at (0,0){
+		\textbf{Motivación}
+	};
+	\draw[-triangle 90,bend right] (A) edge (M);
+	\draw[-triangle 90] (C) edge (M);
+	\draw[-triangle 90,bend left] (R) edge (M);
+\end{tikzpicture}

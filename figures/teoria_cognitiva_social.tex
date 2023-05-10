@@ -1,0 +1,10 @@
+\begin{tikzpicture}[
+		every node/.append style={draw=none,align=center}
+  	]
+	\node[] (S) at (170:3) {\textbf{Social}\\\textbf{\small Factores ambientales}};
+	\node[] (C) at (10:3) {\textbf{Cognitivo}\\\textbf{\small Factores personales}};
+	\node[] (M) at (270:2) {\textbf{Comportamiento}\\\textbf{\small Aprendizaje, motivación}};
+	\draw[{Stealth[length=3mm,width=2mm]}-{Stealth[length=3mm,width=2mm]}] (S) edge (C);
+	\draw[{Stealth[length=3mm,width=2mm]}-{Stealth[length=3mm,width=2mm]}] (C) edge (M);
+	\draw[{Stealth[length=3mm,width=2mm]}-{Stealth[length=3mm,width=2mm]}] (M) edge (S);
+\end{tikzpicture}

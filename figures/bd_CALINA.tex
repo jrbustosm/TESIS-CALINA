@@ -1,0 +1,62 @@
+\begin{tikzpicture}[
+		redondeado/.style={draw,align=left,rounded corners=.15cm,inner sep=10pt, minimum width=150pt}
+  	]
+	
+	\node[redondeado, minimum width=200pt, minimum height=370pt, fill=mygray, draw=none, anchor=north west] 
+		at (-3.4,9.4) {};
+	\node[redondeado, minimum width=200pt, minimum height=370pt, fill=white, anchor=north west] 
+		at (-3.5,9.5) {};
+	
+	\node[] at (-1.8,9.8) {\textbf{CALINA.Card}};
+
+	\node[anchor=west] at (-3,9)  {\faKey\hspace{0.2em} imei\_card};
+	\node[anchor=west] at (1.7,9) {string};
+	\node[anchor=west] at (-3,8.5)  {\faKey\hspace{0.2em} imei\_maker};
+	\node[anchor=west] at (1.7,8.5) {string};
+	\draw (-3.2,8) -- (3.2,8);
+	\node[anchor=west] at (-3,7.5)  {title};
+	\node[anchor=west] at (1.7,7.5) {string};
+	\node[anchor=west] at (-3,7)  {description};
+	\node[anchor=west] at (1.7,7) {string};
+	\node[anchor=west] at (-3,6.5)  {type};
+	\node[anchor=west] at (1.7,6.5) {char};
+	\node[anchor=west] at (-3,6)  {difficulty};
+	\node[anchor=west] at (1.7,6) {char};
+	\node[anchor=west] at (-3,5.5)  {number};
+	\node[anchor=west] at (1.7,5.5) {int};
+	\node[anchor=west] at (-3,5)  {imei\_owner};
+	\node[anchor=west] at (1.7,5) {string};
+	\node[anchor=west] at (-3,4.5)  {image};
+	\node[anchor=west] at (1.7,4.5) {string};
+	\node[anchor=west] at (-3,4)  {trigger=``''};
+	\node[anchor=west] at (1.7,4) {string};
+	\node[anchor=west] at (-3,3.5)  {state='N'};
+	\node[anchor=west] at (1.7,3.5) {char};
+	\node[anchor=west] at (-3,3)  {versionCALINA};
+	\node[anchor=west] at (1.7,3) {string};
+	\node[anchor=west] at (-3,2.5)  {date\_create=null};
+	\node[anchor=west] at (1.7,2.5) {date};
+	\node[anchor=west] at (-3,2)  {date\_expire=null};
+	\node[anchor=west] at (1.7,2) {date};
+	\node[anchor=west] at (-3,1.5)  {scope=-1};
+	\node[anchor=west] at (1.7,1.5) {int};
+	\node[anchor=west] at (-3,1)  {isTransfer=true};
+	\node[anchor=west] at (1.7,1) {bool};
+	\node[anchor=west] at (-3,0.5)  {isCloneable=false};
+	\node[anchor=west] at (1.7,0.5) {bool};
+	\node[anchor=west] at (-3,0)  {isEdit=false};
+	\node[anchor=west] at (1.7,0) {bool};
+	\node[anchor=west] at (-3,-0.5)  {cash=0};
+	\node[anchor=west] at (1.7,-0.5) {int};
+	\node[anchor=west] at (-3,-1)  {cash\_symbol='¢'};
+	\node[anchor=west] at (1.7,-1) {char};
+	\node[anchor=west] at (-3,-1.5)  {isSelect=false};
+	\node[anchor=west] at (1.7,-1.5) {bool};
+	\node[anchor=west] at (-3,-2)  {isSecondary=false};
+	\node[anchor=west] at (1.7,-2) {bool};
+	\node[anchor=west] at (-3,-2.5)  {levels=``''};
+	\node[anchor=west] at (1.7,-2.5) {string};
+	\node[anchor=west] at (-3,-3)  {level=``''};
+	\node[anchor=west] at (1.7,-3) {string};
+
+\end{tikzpicture}

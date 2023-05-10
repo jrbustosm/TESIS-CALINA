@@ -1,0 +1,27 @@
+\begin{tikzpicture}
+\begin{umlsystem}[x=4]{App CALINA}
+\umlusecase[width=2cm, fill=none]{Inscribir en divisa}
+\umlusecase[x=4, width=2cm, fill=none]{Crear divisa}
+\umlusecase[x=4, y=-3, width=2cm, fill=none]{Crear QR inscripción}
+\umlusecase[x=4, y=-6, width=2cm, fill=none]{Crear cuenta estudiante}
+\end{umlsystem}
+\umlusecase[x=-1.5, y=-3, width=2cm, fill=none]{Solicitar cuenta}
+
+\umlactor{Estudiante}
+\umlactor[x=-3]{Sin móvil}
+\umlactor[x=12, y=-3]{Docente}
+
+\umlinherit{Sin móvil}{Estudiante}
+\umlassoc{Estudiante}{usecase-1}
+\umlassoc{Docente}{usecase-2}
+\umlassoc{Docente}{usecase-3}
+\umlassoc{Docente}{usecase-4}
+\umlassoc{Sin móvil}{usecase-5}
+
+\umlinclude[name=incl]{usecase-4}{usecase-5}
+\umlinclude{usecase-3}{usecase-2}
+\umlinclude{usecase-1}{usecase-3}
+\umlinclude{usecase-4}{usecase-3}
+
+\umlnote[x=-2,y=-7,fill=none]{incl-1}{El estudiante sin dispositivo debe hacer la solicitud directa al profesor para crear su cuenta en el dispositivo del docente}
+\end{tikzpicture}

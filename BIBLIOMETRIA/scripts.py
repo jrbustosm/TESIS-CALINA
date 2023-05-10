@@ -14,10 +14,7 @@ with open('keywords_count_lemmatize.txt', 'w') as writer:
 	for w in words:
 		writer.write(lmtzr.lemmatize(w)+"\n")
 
-import os
-from os import path
 from wordcloud import WordCloud
-from matplotlib.pyplot import figure
 import matplotlib.pyplot as plt
 import matplotlib.colors as colors
 import numpy as np

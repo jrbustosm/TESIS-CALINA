@@ -1,0 +1,32 @@
+\begin{tikzpicture}
+\begin{umlsystem}[x=4]{App CALINA}
+
+\umlusecase[width=2cm, fill=none]{Leer QR de adquisición de carta}
+\umlusecase[y=-6, width=2cm, fill=none]{Accionar carta para adquirir}
+\umlusecase[x=7,y=-6,width=2cm, fill=none]{Generar QR de adquisición de carta}
+
+\umlusecase[x=10, width=2cm, fill=none]{Crear cartas}
+\umlusecase[x=4, width=2cm, fill=none]{Publicar banco de cartas}
+\umlusecase[x=6.5, y=-3, width=2cm, fill=none]{Acción}
+\umlusecase[x=10, y=-3, width=2cm, fill=none]{Trofeo}
+\umlusecase[x=13.5, y=-3, width=2cm, fill=none]{Informativa}
+\end{umlsystem}
+\umlusecase[x=-1, y=-6, width=2.5cm, fill=none]{Solicitar código de adquisición}
+
+\umlactor[x=-1]{Estudiante}
+\umlactor[x=-1,y=-3]{Sin móvil}
+\umlactor[x=21,y=-3]{Docente}
+
+\umlinherit{Sin móvil}{Estudiante}
+\umlassoc{Estudiante}{usecase-20}
+\umlassoc{Estudiante}{usecase-21}
+\umlassoc{Estudiante}{usecase-22}
+\umlassoc{Docente}{usecase-22}
+\umlassoc{Docente}{usecase-23}
+\umlassoc{Sin móvil}{usecase-28}
+
+\umlinherit{usecase-25}{usecase-23}
+\umlinherit{usecase-26}{usecase-23}
+\umlinherit{usecase-27}{usecase-23}
+\umlinclude{usecase-24}{usecase-23}
+\end{tikzpicture}

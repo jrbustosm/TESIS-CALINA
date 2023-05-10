@@ -1,0 +1,18 @@
+\begin{tikzpicture}[
+		every node/.append style={draw=none,align=center}
+  	]
+	\node (M) at (4,0) {Mecánicas};
+	\node (A) at (1,-4) {Atributos};
+	\node (P) at (7,-4) {Principios};
+	\node (C) at (4,-2.5) {Dinámicas\\y Emociones};
+	\node[rotate=90] (CE) at (-2,-2.5) {Comportamientos\\Esperados};
+	\node[rotate=270] (CM) at (10,-2.5) {Comportamientos\\Manifestados};
+	\node (H) at (7,2) {Historia};
+	\draw[triangle 90-triangle 90,bend right] (M) edge (A);
+	\draw[triangle 90-triangle 90,bend left] (M) edge (P);
+	\draw[triangle 90-triangle 90,bend right] (A) edge (P);
+	\draw[-triangle 90,bend right] (CE) -- (0.5,-2.5);
+	\draw[-triangle 90,bend right] (7.5,-2.5) -- (CM);
+	\draw[-triangle 90,bend right] (H) -- (7,0);
+	\draw (-1,1) rectangle (9,-6);
+\end{tikzpicture}

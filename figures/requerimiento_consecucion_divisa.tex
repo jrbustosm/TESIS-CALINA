@@ -1,0 +1,28 @@
+\begin{tikzpicture}
+\begin{umlsystem}[x=4]{App CALINA}
+\umlusecase[width=2cm, fill=none]{Venta de carta}
+\umlusecase[y=-2, width=2cm, fill=none]{Leer QR}
+\umlusecase[y=-4, width=2cm, fill=none]{Accionar carta}
+\umlusecase[x=6, width=2cm, fill=none]{Crear QR de divisa}
+\umlusecase[x=6, y=-3, width=2cm, fill=none]{Crear Carta con acción de divisa}
+\umlusecase[x=6, y=-6, width=2cm, fill=none]{Ejecutar transacción de cuenta}
+\end{umlsystem}
+\umlusecase[x=-1.5, y=-6, width=2.5cm, fill=none]{Solicitar venta, acción o lectura, Carta o QR}
+
+\umlactor[x=-1.5]{Estudiante}
+\umlactor[x=-1.5, y=-3]{Sin móvil}
+\umlactor[x=14, y=-3]{Docente}
+
+\umlinherit{Sin móvil}{Estudiante}
+\umlassoc{Estudiante}{usecase-6}
+\umlassoc{Estudiante}{usecase-7}
+\umlassoc{Estudiante}{usecase-8}
+\umlassoc{Docente}{usecase-9}
+\umlassoc{Docente}{usecase-10}
+\umlassoc{Docente}{usecase-11}
+\umlassoc{Sin móvil}{usecase-12}
+
+\umlinclude{usecase-11}{usecase-12}
+\umlinclude{usecase-8}{usecase-10}
+\umlinclude{usecase-7}{usecase-9}
+\end{tikzpicture}

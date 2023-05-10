@@ -61,25 +61,7 @@ emocionales y motivacionales para lograr un impacto positivo \cite{KRATH20211069
 \caption{Modelo MDE Gamificación}
 \label{img:MDE}
 \centering
-\begin{tikzpicture}[
-		every node/.append style={circle,draw=gray!80,align=center,minimum width=90pt,very thin}
-  	]
-	\node (D) at (8,0) {
-		\textbf{\large Dinámicas}\\{\scriptsize Comportamiento}\\{\scriptsize del Jugador}
-	};
-	\node (M) at (0,0) {
-		\textbf{\large Mecánicas}\\{\scriptsize Configuración, reglas}\\{\scriptsize y progresión}
-	};
-	\node (E) at (4,-4) {
-		\textbf{\large Emociones}\\{\scriptsize Estado de la mente}\\{\scriptsize del jugador}
-	};
-	\node[draw=none] (C) at (4,-0.5) {
-		\textbf{\large Gamificación}
-	};
-	\draw[triangle 90-triangle 90,bend left=300] (D) edge (M);
-	\draw[triangle 90-triangle 90,bend right] (M) edge (E);
-	\draw[triangle 90-triangle 90,bend left] (D) edge (E);
-\end{tikzpicture}
+\input{figures/modelo_MDE}
 \\
 {\footnotesize Fuente: \citeA<basada en>{MULLINS2020304}}
 \end{figure}
@@ -99,24 +81,7 @@ gamificación.
 \caption{Modelo MAP Gamificación}
 \label{img:MAP}
 \centering
-\begin{tikzpicture}[
-		every node/.append style={draw=none,align=center}
-  	]
-	\node (M) at (4,0) {Mecánicas};
-	\node (A) at (1,-4) {Atributos};
-	\node (P) at (7,-4) {Principios};
-	\node (C) at (4,-2.5) {Dinámicas\\y Emociones};
-	\node[rotate=90] (CE) at (-2,-2.5) {Comportamientos\\Esperados};
-	\node[rotate=270] (CM) at (10,-2.5) {Comportamientos\\Manifestados};
-	\node (H) at (7,2) {Historia};
-	\draw[triangle 90-triangle 90,bend right] (M) edge (A);
-	\draw[triangle 90-triangle 90,bend left] (M) edge (P);
-	\draw[triangle 90-triangle 90,bend right] (A) edge (P);
-	\draw[-triangle 90,bend right] (CE) -- (0.5,-2.5);
-	\draw[-triangle 90,bend right] (7.5,-2.5) -- (CM);
-	\draw[-triangle 90,bend right] (H) -- (7,0);
-	\draw (-1,1) rectangle (9,-6);
-\end{tikzpicture}
+\input{figures/modelo_MAP}
 \\
 {\footnotesize Fuente: \citeA<basada en>{CECHELLA2018}}
 \end{figure}
@@ -198,30 +163,7 @@ y la participación respecto a grupos bajo esquemas diferentes.
 \caption{Relación entre necesidades psicológicas con las mecánicas del juego}
 \label{img:mecanicas}
 \centering
-\begin{tikzpicture}[
-		redondeado/.style={draw,align=left,rounded corners=.55cm,inner sep=10pt} %anchor=north
-  	]
-	\node[rotate=90] at (0,0) {\textbf{Competencias}};
-	\node[redondeado] at (2,0) {\hspace*{22pt}
-		\begin{minipage}{100pt}
-			{\small Puntos\\Rendimiento\\Medallas\\Niveles\\Tablas de Clasificación\\Bienes Virtuales\\Búsquedas\\Jefes\\Colecciones\\Combates\\Desboqueables}
-		\end{minipage}
-	};
-	\node[rotate=90] at (5.5,0) {\textbf{Relaciones Humanas}};
-	\node [redondeado] at (7.5,0) {\hspace*{22pt}
-		\begin{minipage}{100pt}
-			{\small Equipo\\Tablas de Clasificación\\Historias Significativas\\Bienes Virtuales\\Grafos Sociales\\Búsquedas\\Desboqueables\\Regalos}
-		\end{minipage}
-	};
-	\node[rotate=90] at (11,0) {\textbf{Autonomía}};
-	\node [redondeado] at (13,0) {\hspace*{22pt}
-		\begin{minipage}{100pt}
-			{\small Avatar\\Historias Significativas\\Bienes Virtuales\\Búsquedas\\Regalos}
-		\end{minipage}
-	};
-	\node[isosceles triangle,draw,fill=white,minimum size =0.7cm] at (4.6,0){};
-	\node[isosceles triangle,draw,fill=white,minimum size =0.7cm] at (10.1,0){};
-\end{tikzpicture}
+\input{figures/necesidades_psicologicas}
 \\
 {\footnotesize Fuente: \citeA<basada en>{Zainuddin2020}}
 \end{figure}
@@ -764,25 +706,7 @@ relaciones humanas.
 \caption{Necesidades psicológicas básicas, teoría de la autodeterminación}
 \label{img:SDT}
 \centering
-\begin{tikzpicture}[
-		every node/.append style={circle,draw=gray!80,align=center,minimum width=80pt,very thin}
-  	]
-	\node[] (A) at (-5,3.5) {
-		\textbf{Autonomía}
-	};
-	\node[] (C) at (0,3.5) {
-		\textbf{Competencia}
-	};
-	\node[] (R) at (5,3.5){
-		\textbf{Relaciones}\\\textbf{Humanas}
-	};
-	\node[] (M) at (0,0){
-		\textbf{Motivación}
-	};
-	\draw[-triangle 90,bend right] (A) edge (M);
-	\draw[-triangle 90] (C) edge (M);
-	\draw[-triangle 90,bend left] (R) edge (M);
-\end{tikzpicture}
+\input{figures/teoria_autodeterminacion}
 \\
 {\footnotesize Fuente: \citeA<basada en>{deci1985intrinsic}}
 \end{figure}
@@ -829,30 +753,7 @@ estado cuando la tarea se realiza bajo una motivación intrínseca.
 \caption{Tipo de experiencia como relación entre nivel de desafío y habilidades}
 \label{img:tflow}
 \centering
-\begin{tikzpicture}
-	\draw (0,0) -- (6,0) -- (6,6) --(0,6) -- (0,0);
-	\draw[pattern=dots] (3,3) -- (4,6) -- (6,6) -- (6,4) -- (3,3);
-	\draw (2,0) -- (4,6);
-	\draw (4,0) -- (2,6);
-	\draw (0,2) -- (6,4);
-	\draw (0,4) -- (6,2);
-	\node at (3,-1) {Nivel de Habilidad};
-	\node at (1,-0.3) {Bajo};
-	\node at (3,-0.3) {Medio};
-	\node at (5,-0.3) {Alto};
-	\node[rotate=90] at (-1,3) {Nivel de Desafío};
-	\node[rotate=90] at (-0.3,1) {Bajo};
-	\node[rotate=90] at (-0.3,3) {Medio};
-	\node[rotate=90] at (-0.3,5) {Alto};
-	\node at (3,0.5) {\small Tedio};
-	\node at (3,5.5) {\small Exitación};
-	\node at (1.25,3) {\small Preocupación};
-	\node at (4.75,3) {\small Control};
-	\node[rotate=45] at (5,5) {\colorbox{white}{\small Flujo}};
-	\node[rotate=-45] at (5,1) {\small Relajación};
-	\node[rotate=-45] at (1,5) {\small Anxiedad};
-	\node[rotate=45] at (1,1) {\small Apatía};
-\end{tikzpicture}
+\input{figures/teoria_flujo}
 \\
 {\footnotesize Fuente: \citeA<basada en>{csikszentmihalyi_1988}}
 \end{figure}
@@ -899,33 +800,7 @@ objetivo y el desempeño en la ejecución de la tarea.
 \caption{Principios para un efectivo establecimiento de metas}
 \label{img:goal}
 \centering
-\begin{tikzpicture}[
-		every node/.append style={circle,draw=gray!80,align=center,minimum width=75pt,very thin}
-  	]
-	\node[] (L) at (90:3.3) {
-		\textbf{\small Claridad}
-	};
-	\node[] (D) at (18:3.3) {
-		\textbf{\small Desafío}
-	};
-	\node[] (J) at (162:3.3){
-		\textbf{\small Complejidad}
-	};
-	\node[] (R) at (234:3.3){
-		\textbf{\small Retro-}\\\textbf{\small alimentación}
-	};
-	\node[] (C) at (306:3.3){
-		\textbf{\small Compromiso}
-	};
-	\node[] (M) at (0,0){
-		\textbf{Motivación}
-	};
-	\draw[-] (L) edge (M);
-	\draw[-] (D) edge (M);
-	\draw[-] (J) edge (M);
-	\draw[-] (R) edge (M);
-	\draw[-] (C) edge (M);
-\end{tikzpicture}
+\input{figures/teoria_establecimiento_metas}
 \\
 {\footnotesize Fuente: \citeA<basada en>{Locke1968}}
 \end{figure}
@@ -961,16 +836,7 @@ factores anteriores.
 \caption{Teoría cognitiva social}
 \label{img:TCS}
 \centering
-\begin{tikzpicture}[
-		every node/.append style={draw=none,align=center}
-  	]
-	\node[] (S) at (170:3) {\textbf{Social}\\\textbf{\small Factores ambientales}};
-	\node[] (C) at (10:3) {\textbf{Cognitivo}\\\textbf{\small Factores personales}};
-	\node[] (M) at (270:2) {\textbf{Comportamiento}\\\textbf{\small Aprendizaje, motivación}};
-	\draw[{Stealth[length=3mm,width=2mm]}-{Stealth[length=3mm,width=2mm]}] (S) edge (C);
-	\draw[{Stealth[length=3mm,width=2mm]}-{Stealth[length=3mm,width=2mm]}] (C) edge (M);
-	\draw[{Stealth[length=3mm,width=2mm]}-{Stealth[length=3mm,width=2mm]}] (M) edge (S);
-\end{tikzpicture}
+\input{figures/teoria_cognitiva_social}
 \\
 {\footnotesize Fuente: \citeA<basada en>{bandura1986social}}
 \end{figure}
@@ -992,16 +858,7 @@ totalmente en lo que le sucede cuando este realiza alguna acción y no lo que si
 \caption{Teoría del reforzamiento conductual}
 \label{img:TRC}
 \centering
-\begin{tikzpicture}
-\node[draw,regular polygon, regular polygon sides=4,minimum width=120pt,align=center,draw=gray!80] (RP) at (-90pt,0) {\textbf{Refuerzo}\\\textbf{positivo}};
-\node[draw,regular polygon, regular polygon sides=4,minimum width=120pt,align=center,draw=gray!80] (RN) at (0,0) {\textbf{Refuerzo}\\\textbf{negativo}};
-\node[draw,regular polygon, regular polygon sides=4,minimum width=120pt,align=center,draw=gray!80] (CP) at (-90pt,-90pt) {\textbf{Castigo}\\\textbf{positivo}};
-\node[draw,regular polygon, regular polygon sides=4,minimum width=120pt,align=center,draw=gray!80] (CN) at (0,-90pt) {\textbf{Castigo}\\\textbf{negativo}};
-\node[draw=none] at (-90pt,60pt) {$+$Estimulo};
-\node[draw=none] at (0pt,60pt) {$-$Estimulo};
-\node[draw=none,rotate=90] at (-150pt,0pt) {$+$Conducta};
-\node[draw=none,rotate=90] at (-150pt,-90pt) {$-$Conducta};
-\end{tikzpicture}
+\input{figures/teoria_reforzamiento_conductual}
 \\
 {\footnotesize Fuente: \citeA<basada en>{skinner1969contingencies}}
 \end{figure}
@@ -1043,14 +900,7 @@ grupos.
 \caption{Teoría de la identidad social}
 \label{img:TIS}
 \centering
-\begin{tikzpicture}
-\node[draw=none,align=center] at (-100pt,0pt) {Categorización\\Social};
-\node[draw=none,align=center] at (0pt,0pt) {Identificación\\Social};
-\node[draw=none,align=center] at (100pt,0pt) {Comparación\\Social};
-\draw (-140pt,0pt) -- (-150pt,20pt) -- (-60pt,20pt) -- (-50pt,0pt) -- (-60pt,-20pt) -- (-150pt,-20pt) -- (-140pt,0pt);
-\draw (-40pt,0pt) -- (-50pt,20pt) -- (40pt,20pt) -- (50pt,0pt) -- (40pt,-20pt) -- (-50pt,-20pt) -- (-40pt,0pt);
-\draw (60pt,0pt) -- (50pt,20pt) -- (140pt,20pt) -- (150pt,0pt) -- (140pt,-20pt) -- (50pt,-20pt) -- (60pt,0pt);
-\end{tikzpicture}
+\input{figures/teoria_identidad_social}
 \\
 {\footnotesize \citeA<basada en>{tajfel1979integrative}}
 \end{figure}

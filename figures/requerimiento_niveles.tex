@@ -1,0 +1,31 @@
+\begin{tikzpicture}
+\begin{umlsystem}[x=4]{App CALINA}
+\umlusecase[width=2cm, fill=none]{Leer QR inscripción}
+\umlusecase[y=-3, width=2cm, fill=none]{Accionar carta}
+\umlusecase[y=-6, width=2cm, fill=none]{Comprar nivel}
+
+\umlusecase[x=4.5, y=-4.5, width=2cm, fill=none]{Incremento de nivel}
+
+\umlusecase[x=9, width=2cm, fill=none]{Crear QR inscripción}
+\umlusecase[x=9, y=-3, width=2cm, fill=none]{Crear esquema de niveles}
+\end{umlsystem}
+
+\umlactor[x=-1]{Estudiante}
+\umlactor[x=-1,y=-3]{Sin móvil}
+\umlactor[x=17,y=-1.5]{Docente}
+
+\umlinherit{Sin móvil}{Estudiante}
+
+\umlassoc{Estudiante}{usecase-29}
+\umlassoc{Estudiante}{usecase-30}
+\umlassoc{Estudiante}{usecase-31}
+\umlassoc{Docente}{usecase-33}
+\umlassoc{Docente}{usecase-34}
+\umlinclude{usecase-29}{usecase-33}
+\umlinclude{usecase-30}{usecase-32}
+\umlinclude{usecase-31}{usecase-32}
+\umlinclude{usecase-32}{usecase-34}
+\umlinclude{usecase-33}{usecase-34}
+\umlnote[x=-2,y=-7,fill=none, width=4cm]{Sin móvil}{El estudiante sin dispositivo no puede usar niveles con CALINA}
+
+\end{tikzpicture}

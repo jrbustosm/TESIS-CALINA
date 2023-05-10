@@ -3,63 +3,7 @@
 %        jrbustosm@ut.edu.co
 %
 
-%--------------------------------------------------------------------------------
-%Definición función para graficar cartas
-%--------------------------------------------------------------------------------
-\definecolor{mygray}{RGB}{200,200,200}
-\definecolor{mydarkgray}{RGB}{30,30,30}
-\pgfSetupImageAsPattern[width=15cm]{marble}{img/marbel.jpg}
-\pgfSetupImageAsPattern[width=15cm]{verde}{img/verde.jpg}
-\pgfSetupImageAsPattern[width=15cm]{azul}{img/azul.jpg}
-\pgfSetupImageAsPattern[width=15cm]{morado}{img/morado.jpg}
-\input{invertedcorner}  %Descargado de https://tex.stackexchange.com/questions/341946/tikz-rectangle-with-curved-edges-and-inverted-rounded-corners
-
-\newcommand{\cardHxH}[5]{
-	\fill[rounded corners=.55cm] (0, 0) rectangle (7.41cm, 10.41cm) {};
-	\draw[pattern color=mydarkgray,pattern=fivepointed stars,rounded corners=.55cm] (0, 0) rectangle (7.41cm, 10.41cm) {};
-	\fill[fill=mygray,rounded corners] (0.2cm,9.01cm) rectangle (7.21cm, 10.11cm) {};
-	\node[draw,line width=0.4mm,rectangle with inverted corners, rectangle with inverted corners radius=0.15cm,
-	minimum height=0.94cm, minimum width=1.77cm, inner sep=0pt] at (1.165cm,9.56cm) {#1};
-	\node[draw,line width=0.4mm,rectangle with inverted corners, rectangle with inverted corners radius=0.15cm,
-	minimum height=0.94cm, minimum width=3.15cm, inner sep=0pt] at (3.705cm,9.56cm) {{\footnotesize #2}};
-	\node[draw,line width=0.4mm,rectangle with inverted corners, rectangle with inverted corners radius=0.15cm,
-	minimum height=0.94cm, minimum width=1.77cm, inner sep=0pt] at (6.245cm,9.56cm) {\textbf{#3}};
-	\draw[line width=0.4mm] (0.22cm,9.02cm) circle (0.13cm);
-	\draw[line width=0.4mm] (2.09cm,9.01cm) circle (0.13cm);
-	\draw[line width=0.4mm] (5.32cm,9.01cm) circle (0.13cm);
-	\draw[line width=0.4mm] (7.19cm,9.02cm) circle (0.13cm);
-	\draw[line width=0.4mm] (0.22cm,10.09cm) circle (0.13cm);
-	\draw[line width=0.4mm] (2.09cm,10.11cm) circle (0.13cm);
-	\draw[line width=0.4mm] (5.32cm,10.11cm) circle (0.13cm);
-	\draw[line width=0.4mm] (7.19cm,10.09cm) circle (0.13cm);
-	\fill[fill=mygray] (0.2cm,4.78cm) rectangle (7.21cm, 8.79cm) {};
-	\ifthenelse{\equal{\string #4}{\string none}}{
-	}{
-	\node[draw,line width=1mm,inner sep=0pt] at (3.705cm,6.785cm) {\includegraphics[width=6.71cm,height=3.71cm]{#4}};
-	}
-	\path[image as pattern] (0.2cm,0.48cm) rectangle (7.21cm,4.58cm) {};
-	\fill[rounded corners] (0.4cm,0.68cm) rectangle (7.01cm,4.38cm) {};
-	\node[fill=mygray, minimum height=3.44cm, minimum width=6.35cm]  at (3.705cm,2.53cm) {
-		\begin{varwidth}{6cm}
-		\centering
-		#5	
-		\end{varwidth}
-	};
-}
-
-\newcommand{\cardHxHBack}[1]{
-	\fill[rounded corners=.55cm] (0, 0) rectangle (7.41cm, 10.41cm) {};
-	\draw[pattern color=mydarkgray,pattern=fivepointed stars,rounded corners=.55cm] (0, 0) rectangle (7.41cm, 10.41cm) {};
-	\fill[white] (0.505cm, 3.3cm) rectangle (6.905cm, 9.7cm) {};
-	\node[inner sep=0] at (3.705cm,6.5cm) (QR) {
-		\qrcode[height=6cm,nolink]{#1}
-	};
-	\node[rounded corners=.15cm,fill=mygray, minimum width=3cm, minimum height=1cm] at (1.97cm,2.3cm) {\faPlayCircle\ Usar};
-	\node[rounded corners=.15cm,fill=mygray, minimum width=3cm, minimum height=1cm] at (5.44cm,2.3cm) {\faAslInterpreting\ Vender};
-	\node[rounded corners=.15cm,fill=mygray, minimum width=3cm, minimum height=1cm] at (1.97cm,1cm) {\faGift\ Regalar};
-	\node[rounded corners=.15cm,fill=mygray, minimum width=3cm, minimum height=1cm] at (5.44cm,1cm) {\faTimesCircle\ Destruir};
-}
-%--------------------------------------------------------------------------------
+\input{figures/def_cardHxH}
 
 \section{Diseño de software - Aplicación CALINA}
 
@@ -254,33 +198,7 @@ transacciones y usos de este dinero.
 \label{img:UMLcreaciondivisa}
 \centering
 \begin{adjustbox}{width=13cm}
-\begin{tikzpicture}
-\begin{umlsystem}[x=4]{App CALINA}
-\umlusecase[width=2cm, fill=none]{Inscribir en divisa}
-\umlusecase[x=4, width=2cm, fill=none]{Crear divisa}
-\umlusecase[x=4, y=-3, width=2cm, fill=none]{Crear QR inscripción}
-\umlusecase[x=4, y=-6, width=2cm, fill=none]{Crear cuenta estudiante}
-\end{umlsystem}
-\umlusecase[x=-1.5, y=-3, width=2cm, fill=none]{Solicitar cuenta}
-
-\umlactor{Estudiante}
-\umlactor[x=-3]{Sin móvil}
-\umlactor[x=12, y=-3]{Docente}
-
-\umlinherit{Sin móvil}{Estudiante}
-\umlassoc{Estudiante}{usecase-1}
-\umlassoc{Docente}{usecase-2}
-\umlassoc{Docente}{usecase-3}
-\umlassoc{Docente}{usecase-4}
-\umlassoc{Sin móvil}{usecase-5}
-
-\umlinclude[name=incl]{usecase-4}{usecase-5}
-\umlinclude{usecase-3}{usecase-2}
-\umlinclude{usecase-1}{usecase-3}
-\umlinclude{usecase-4}{usecase-3}
-
-\umlnote[x=-2,y=-7,fill=none]{incl-1}{El estudiante sin dispositivo debe hacer la solicitud directa al profesor para crear su cuenta en el dispositivo del docente}
-\end{tikzpicture}
+	\input{figures/requerimiento_creacion_divisa}
 \end{adjustbox}
 \\
 {\footnotesize Fuente: de elaboración propia}
@@ -296,34 +214,7 @@ la nota de un ejercicio o examen, el uso de lotería, o la venta de bienes (cart
 \label{img:UMLconsecuciondivisa}
 \centering
 \begin{adjustbox}{width=13cm}
-\begin{tikzpicture}
-\begin{umlsystem}[x=4]{App CALINA}
-\umlusecase[width=2cm, fill=none]{Venta de carta}
-\umlusecase[y=-2, width=2cm, fill=none]{Leer QR}
-\umlusecase[y=-4, width=2cm, fill=none]{Accionar carta}
-\umlusecase[x=6, width=2cm, fill=none]{Crear QR de divisa}
-\umlusecase[x=6, y=-3, width=2cm, fill=none]{Crear Carta con acción de divisa}
-\umlusecase[x=6, y=-6, width=2cm, fill=none]{Ejecutar transacción de cuenta}
-\end{umlsystem}
-\umlusecase[x=-1.5, y=-6, width=2.5cm, fill=none]{Solicitar venta, acción o lectura, Carta o QR}
-
-\umlactor[x=-1.5]{Estudiante}
-\umlactor[x=-1.5, y=-3]{Sin móvil}
-\umlactor[x=14, y=-3]{Docente}
-
-\umlinherit{Sin móvil}{Estudiante}
-\umlassoc{Estudiante}{usecase-6}
-\umlassoc{Estudiante}{usecase-7}
-\umlassoc{Estudiante}{usecase-8}
-\umlassoc{Docente}{usecase-9}
-\umlassoc{Docente}{usecase-10}
-\umlassoc{Docente}{usecase-11}
-\umlassoc{Sin móvil}{usecase-12}
-
-\umlinclude{usecase-11}{usecase-12}
-\umlinclude{usecase-8}{usecase-10}
-\umlinclude{usecase-7}{usecase-9}
-\end{tikzpicture}
+	\input{figures/requerimiento_consecucion_divisa}
 \end{adjustbox}
 \\
 {\footnotesize Fuente: de elaboración propia}
@@ -337,36 +228,7 @@ asignatura en particular.
 \label{img:UMLusodivisa}
 \centering
 \begin{adjustbox}{width=15cm}
-\begin{tikzpicture}
-\begin{umlsystem}[x=4]{App CALINA}
-\umlusecase[width=2cm, fill=none]{Compra de carta}
-\umlusecase[y=-3, width=2cm, fill=none]{Compra de nivel}
-
-\umlusecase[x=10, width=2cm, fill=none]{Crear cartas}
-\umlusecase[x=5, y=-1.5, width=2cm, fill=none]{Publicar banco de cartas}
-\umlusecase[x=10, y=-3, width=2cm, fill=none]{Crear lista de niveles}
-\umlusecase[x=10, y=-6, width=2cm, fill=none]{Ejecutar transacción de cuenta}
-\end{umlsystem}
-\umlusecase[x=-1.5, y=-6, width=2.5cm, fill=none]{Solicitar compra carta o nivel}
-
-\umlactor[x=-1.5]{Estudiante}
-\umlactor[x=-1.5,y=-3]{Sin móvil}
-\umlactor[x=18, y=-3]{Docente}
-
-\umlinherit{Sin móvil}{Estudiante}
-\umlassoc{Estudiante}{usecase-13}
-\umlassoc{Estudiante}{usecase-14}
-\umlassoc{Docente}{usecase-15}
-\umlassoc{Docente}{usecase-17}
-\umlassoc{Docente}{usecase-18}
-\umlassoc{Sin móvil}{usecase-19}
-
-\umlinclude{usecase-13}{usecase-16}
-\umlinclude{usecase-14}{usecase-16}
-\umlinclude{usecase-16}{usecase-15}
-\umlinclude{usecase-16}{usecase-17}
-\umlinclude{usecase-18}{usecase-19}
-\end{tikzpicture}
+	\input{figures/requerimiento_uso_divisa}
 \end{adjustbox}
 \\
 {\footnotesize Fuente: de elaboración propia}
@@ -385,48 +247,7 @@ de decoración que se desea (una raya, doble raya, inclinación, etc.).
 \label{img:simbolosdivisas}
 \centering
 \begin{adjustbox}{width=10cm}
-\begin{tikzpicture}
-	\node[inner sep=0pt] at (0,0) {\textbf{B}};
-	\draw[line width=0.3mm] (-0.02,7pt) -- (-0.02,-7pt);
-	\draw[line width=0.3mm] (0.02,7pt) -- (0.02,-7pt);
-	\node[inner sep=0pt] at (1,0) {\textbf{B}};
-	\begin{scope}[xshift=1cm, rotate=-10]
-	\draw[line width=0.3mm] (-0.02,7pt) -- (-0.02,-7pt);
-	\draw[line width=0.3mm] (0.02,7pt) -- (0.02,-7pt);
-	\end{scope}
-	\node[inner sep=0pt] at (2,0) {\textbf{B}};
-	\begin{scope}[xshift=2cm]
-	\draw[line width=0.3mm] (0,7pt) -- (0,-7pt);
-	\end{scope}
-	\node[inner sep=0pt] at (3,0) {\textbf{B}};
-	\begin{scope}[yshift=0cm, xshift=3cm]
-	\draw[line width=0.3mm,line cap=round] plot [smooth, tension=1] coordinates { (0.02,5.5pt) (-0.02,5.5pt) (0,0) (0.02,-5.5pt) (-0.02,-5.5pt)};
-	\end{scope}
-	\node[inner sep=0pt] at (0,-0.6) {\textbf{B}};
-	\begin{scope}[yshift=-0.6cm, xshift=0cm]
-	\draw[line width=0.5mm] (0,4pt) -- (0,7pt);
-	\draw[line width=0.5mm] (0,-4pt) -- (0,-7pt);
-	\end{scope}
-	\node[inner sep=0pt] at (1,-0.6) {\textbf{B}};
-	\begin{scope}[yshift=-0.6cm, xshift=1cm]
-	\draw[line width=0.3mm] (-0.02,4pt) -- (-0.02,7pt);
-	\draw[line width=0.3mm] (0.02,4pt) -- (0.02,7pt);
-	\draw[line width=0.3mm] (-0.02,-4pt) -- (-0.02,-7pt);
-	\draw[line width=0.3mm] (0.02,-4pt) -- (0.02,-7pt);
-	\end{scope}
-	\node[inner sep=0pt] at (2,-0.6) {\textbf{B}};
-	\begin{scope}[yshift=-0.6cm, xshift=2cm]
-	\draw[line width=0.3mm] (-6pt,-0.02) -- (6pt,-0.02);
-	\draw[line width=0.3mm] (-6pt,0.02) -- (6pt,0.02);
-	\end{scope}
-	\node[inner sep=0pt] at (3,-0.6) {\textbf{B}};
-	\begin{scope}[yshift=-0.6cm, xshift=3cm]
-	\draw[line width=0.3mm] (-6pt,-0.02) -- (-2.2pt,-0.02);
-	\draw[line width=0.3mm] (-6pt,0.02) -- (-2.2pt,0.02);
-	\draw[line width=0.3mm] (2.2pt,0.02) -- (6pt,0.02);
-	\draw[line width=0.3mm] (2.2pt,-0.02) -- (6pt,-0.02);
-	\end{scope}
-\end{tikzpicture}
+	\input{figures/representacion_divisa}
 \end{adjustbox}
 \\
 {\footnotesize Fuente: de elaboración propia}
@@ -459,38 +280,7 @@ huevos de pascua, loterías, o mediante la acción de otras cartas.
 \label{img:UMLcreacioncartas}
 \centering
 \begin{adjustbox}{width=15cm}
-\begin{tikzpicture}
-\begin{umlsystem}[x=4]{App CALINA}
-
-\umlusecase[width=2cm, fill=none]{Leer QR de adquisición de carta}
-\umlusecase[y=-6, width=2cm, fill=none]{Accionar carta para adquirir}
-\umlusecase[x=7,y=-6,width=2cm, fill=none]{Generar QR de adquisición de carta}
-
-\umlusecase[x=10, width=2cm, fill=none]{Crear cartas}
-\umlusecase[x=4, width=2cm, fill=none]{Publicar banco de cartas}
-\umlusecase[x=6.5, y=-3, width=2cm, fill=none]{Acción}
-\umlusecase[x=10, y=-3, width=2cm, fill=none]{Trofeo}
-\umlusecase[x=13.5, y=-3, width=2cm, fill=none]{Informativa}
-\end{umlsystem}
-\umlusecase[x=-1, y=-6, width=2.5cm, fill=none]{Solicitar código de adquisición}
-
-\umlactor[x=-1]{Estudiante}
-\umlactor[x=-1,y=-3]{Sin móvil}
-\umlactor[x=21,y=-3]{Docente}
-
-\umlinherit{Sin móvil}{Estudiante}
-\umlassoc{Estudiante}{usecase-20}
-\umlassoc{Estudiante}{usecase-21}
-\umlassoc{Estudiante}{usecase-22}
-\umlassoc{Docente}{usecase-22}
-\umlassoc{Docente}{usecase-23}
-\umlassoc{Sin móvil}{usecase-28}
-
-\umlinherit{usecase-25}{usecase-23}
-\umlinherit{usecase-26}{usecase-23}
-\umlinherit{usecase-27}{usecase-23}
-\umlinclude{usecase-24}{usecase-23}
-\end{tikzpicture}
+	\input{figures/requerimiento_creacion_cartas}
 \end{adjustbox}
 \\
 {\footnotesize Fuente: de elaboración propia}
@@ -508,47 +298,13 @@ CALINA, consta de dos caras y la constituye 10 elementos que serán descritos a 
 	\subcaptionbox{Parte frontal\label{img:modelodecartasfront}}[0.4\linewidth]{
 		\centering
 		\begin{adjustbox}{width=7cm}
-		\begin{tikzpicture}[use image as pattern=marble]
-			\cardHxH{\#\#\#}{Nombre carta}{C-D}{IckshonpeKatocha}{Texto informativo}
-			\draw[red, line width=0.8mm] (0.25cm, 4.83cm) rectangle (7.16cm, 8.74cm) {};
-			\draw[red, line width=0.8mm] (-0.5cm, 6.785cm) -- (0.25cm, 6.785cm);
-			\node[red] at (-0.7cm, 6.785cm) {D};
-			\draw[red, line width=0.8mm] (0.42cm, 0.7cm) rectangle (6.99cm, 4.36cm) {};
-			\draw[red, line width=0.8mm] (-0.5cm, 2.53cm) -- (0.41cm, 2.53cm);
-			\node[red] at (-0.7cm, 2.53cm) {E};
-			\draw[red, line width=0.8mm] (0.48cm, 9.29cm) rectangle (1.95cm, 9.83cm) {};
-			\draw[red, line width=0.8mm] (-0.5cm,9.56cm) -- (0.48cm, 9.56cm);
-			\node[red] at (-0.7cm, 9.56cm) {A};
-			\draw[red, line width=0.8mm] (5.46cm, 9.29cm) rectangle (6.93cm, 9.83cm) {};
-			\draw[red, line width=0.8mm] (6.93cm, 9.56cm) -- (7.91cm, 9.56cm);
-			\node[red] at (8.11cm, 9.56cm) {C};
-			\draw[red, line width=0.8mm] (2.4cm, 9.29cm) rectangle (5.01cm, 9.83cm) {};
-			\draw[red, line width=0.8mm] (3.705cm, 9.83cm) -- (3.705cm, 10.91cm);
-			\node[red] at (3.705cm, 11.11cm) {B};
-		\end{tikzpicture}
+			\input{figures/carta_parte_frontal}
 		\end{adjustbox}
 	}
 	\subcaptionbox{Parte trasera\label{img:modelodecartasback}}[0.4\linewidth]{
 		\centering
 		\begin{adjustbox}{width=7cm}
-		\begin{tikzpicture}[use image as pattern=marble]
-			\cardHxHBack{Maria Isabel, hija te ame desde el primer momento que te vi, eres perfecta tal como eres, me haces feliz}
-			\draw[red, line width=0.8mm] (0.705cm, 3.5cm) rectangle (6.705cm, 9.5cm) {};
-			\draw[red, line width=0.8mm] (3.705cm, 9.5cm) -- (3.705cm, 10.91cm);
-			\node[red] at (3.705cm,11.11cm) {F};
-			\draw[red, line width=0.8mm] (0.47cm, 1.8cm) rectangle (3.47cm, 2.8cm) {};
-			\draw[red, line width=0.8mm] (-0.5cm, 2.3cm) -- (0.47cm, 2.3cm);
-			\node[red] at (-0.7cm, 2.3cm) {G};
-			\draw[red, line width=0.8mm] (3.94cm, 1.8cm) rectangle (6.94cm, 2.8cm) {};
-			\draw[red, line width=0.8mm] (6.94cm, 2.3cm) -- (7.91cm, 2.3cm);
-			\node[red] at (8.11cm, 2.3cm) {H};
-			\draw[red, line width=0.8mm] (0.47cm, 0.5cm) rectangle (3.47cm, 1.5cm) {};
-			\draw[red, line width=0.8mm] (-0.5cm, 1cm) -- (0.47cm, 1cm);
-			\node[red] at (-0.7cm, 1cm) {I};
-			\draw[red, line width=0.8mm] (3.94cm, 0.5cm) rectangle (6.94cm, 1.5cm) {};
-			\draw[red, line width=0.8mm] (6.94cm, 1cm) -- (7.91cm, 1cm);
-			\node[red] at (8.11cm, 1cm) {J};
-		\end{tikzpicture}
+			\input{figures/carta_parte_trasera}
 		\end{adjustbox}
 	}
 \\ \vspace{2mm}
@@ -635,35 +391,7 @@ que pueden modificar los datos de la aplicación en si.
 \label{img:UMLusocartaX}
 \centering
 \begin{adjustbox}{width=14cm}
-\begin{tikzpicture}
-\begin{umlseqdiag}
-\umlactor{Estudiante}
-\umlobject[]{CALINA}
-\umlactor{Docente}
-\umlobject[]{CALINA docente}
-\begin{umlcall}[op={usar()}]{Estudiante}{CALINA}
-	\begin{umlcall}[op={confirmación()}, return={respuesta}]{CALINA}{Estudiante}
-	\end{umlcall}
-	\begin{umlcallself}[op={Marcar Carta},type=synchron,padding=1.5]{CALINA}
-	\end{umlcallself}
-	\begin{umlfragment}[type=alt, label={Acción real}, inner xsep=10, inner ysep=1]
-		\begin{umlcall}[type=return, op={QR code}]{CALINA}{Estudiante}
-		\end{umlcall}
-		\begin{umlcall}[op={validación(QR code)}, return={respuesta}, padding=7]{Estudiante}{Docente}
-			\begin{umlcall}[op={leerQR()}, return={confirmación}]{Docente}{CALINA docente}
-				\begin{umlcallself}[op={Registrar()},type=synchron, padding=1.5]{CALINA docente}
-				\end{umlcallself}
-			\end{umlcall}
-		\end{umlcall}
-	\umlfpart[Acción interna]
-		\begin{umlcallself}[op={Trigger()},type=synchron, dt=25, padding=1.5]{CALINA}
-			\begin{umlcall}[type=return, padding=-2]{CALINA}{Estudiante}
-			\end{umlcall}
-		\end{umlcallself}
-	\end{umlfragment}
-\end{umlcall}
-\end{umlseqdiag}
-\end{tikzpicture}
+	\input{figures/secuencia_carta_accion}
 \end{adjustbox}
 \\
 {\footnotesize Fuente: de elaboración propia}
@@ -777,36 +505,7 @@ usando la aplicación CALINA.
 \label{img:UMLintercambio}
 \centering
 \begin{adjustbox}{width=12cm}
-\begin{tikzpicture}
-\begin{umlseqdiag}
-\umlactor{Remitente}
-\umlobject[]{CALINA Origen}
-\umlactor{Destinatario}
-\umlobject[]{CALINA Destino}
-\begin{umlcall}[op={iniTransferencia}]{Remitente}{CALINA Origen}
-	\begin{umlcall}[op={solicitarID}]{Remitente}{Destinatario}
-	\end{umlcall}
-	\begin{umlcall}[op={solicitarID\_QR}, dt=3, padding=0]{Destinatario}{CALINA Destino}
-		\begin{umlcallself}[op={GenID\_QR},type=synchron, padding=1.5]{CALINA Destino}
-		\end{umlcallself}
-	\end{umlcall}
-	\begin{umlcall}[op={leerID\_QR}, return={QR Code}, dt=19]{CALINA Origen}{CALINA Destino}
-		\begin{umlcallself}[op={Marcar\_Carta},type=synchron, padding=1.5]{CALINA Origen}
-		\end{umlcallself}
-		\begin{umlcallself}[op={GenTranf\_QR},type=synchron, padding=1.5, dt=-1]{CALINA Origen}
-		\end{umlcallself}
-	\end{umlcall}
-	\begin{umlcall}[op={leerTranf\_QR}, return={QR Code}, dt=5]{CALINA Destino}{CALINA Origen}
-		\begin{umlcallself}[op={GenCarta},type=synchron, padding=1.5]{CALINA Destino}
-		\end{umlcallself}
-	\end{umlcall}
-\end{umlcall}
-\begin{umlcall}[op={borrarCarta}, padding=0]{Remitente}{CALINA Origen}
-	\begin{umlcallself}[op={borrar\_Carta},type=synchron, padding=1.5]{CALINA Origen}
-	\end{umlcallself}
-\end{umlcall}
-\end{umlseqdiag}
-\end{tikzpicture}
+	\input{figures/secuencia_intercambio_cartas}
 \end{adjustbox}
 \\
 {\footnotesize Fuente: de elaboración propia}
@@ -829,44 +528,7 @@ caduca.
 \label{img:UMLventa}
 \centering
 \begin{adjustbox}{width=12cm}
-\begin{tikzpicture}
-\begin{umlseqdiag}
-\umlactor{Vendedor}
-\umlobject[]{CALINA Origen}
-\umlactor{Comprador}
-\umlobject[]{CALINA Destino}
-\begin{umlcall}[op={iniVenta}]{Vendedor}{CALINA Origen}
-	\begin{umlcall}[op={solicitarDinero}]{Vendedor}{Comprador}
-		\begin{umlcallself}[op={GenID\_QR},type=synchron, padding=1.5, dt=5]{CALINA Origen}
-		\end{umlcallself}
-	\end{umlcall}
-	\begin{umlcall}[op={solicitarDinero\_QR}, dt=3, padding=0]{Comprador}{CALINA Destino}
-		\begin{umlcall}[op={leerID\_QR}, return={QR Code}]{CALINA Destino}{CALINA Origen}
-			\begin{umlcallself}[op={Restar\_Dinero},type=synchron, padding=1.5]{CALINA Destino}
-			\end{umlcallself}
-			\begin{umlcallself}[op={GenDinero\_QR},type=synchron, padding=1.5, dt=-1]{CALINA Destino}
-			\end{umlcallself}
-		\end{umlcall}
-	\end{umlcall}
-	\begin{umlcall}[op={leerDinero\_QR}, return={QR Code}, dt=5]{CALINA Origen}{CALINA Destino}
-		\begin{umlcallself}[op={Add\_Dinero},type=synchron, padding=1.5]{CALINA Origen}
-		\end{umlcallself}
-		\begin{umlcallself}[op={Marcar\_Carta},type=synchron, padding=1.5, dt=-1]{CALINA Origen}
-		\end{umlcallself}
-		\begin{umlcallself}[op={GenTranf\_QR},type=synchron, padding=1.5, dt=-1]{CALINA Origen}
-		\end{umlcallself}
-	\end{umlcall}
-	\begin{umlcall}[op={leerTranf\_QR}, return={QR Code}, dt=5]{CALINA Destino}{CALINA Origen}
-		\begin{umlcallself}[op={GenCarta},type=synchron, padding=1.5]{CALINA Destino}
-		\end{umlcallself}
-	\end{umlcall}
-\end{umlcall}
-\begin{umlcall}[op={borrarCarta}, padding=0]{Vendedor}{CALINA Origen}
-	\begin{umlcallself}[op={borrar\_Carta},type=synchron, padding=1.5]{CALINA Origen}
-	\end{umlcallself}
-\end{umlcall}
-\end{umlseqdiag}
-\end{tikzpicture}
+	\input{figures/secuencia_venta_cartas}
 \end{adjustbox}
 \\
 {\footnotesize Fuente: de elaboración propia}
@@ -887,28 +549,7 @@ dinero en la compra de varias cartas.
 \label{img:UMLcompra}
 \centering
 \begin{adjustbox}{width=8cm}
-\begin{tikzpicture}
-\begin{umlseqdiag}
-\umlobject[]{CALINA Estudiante}
-\umlobject[]{CALINA web}
-\begin{umlcall}[op={leerID\_QR}, return={PIN}]{CALINA Estudiante}{CALINA web}
-	\begin{umlcallself}[op={Restar\_Dinero},type=synchron, padding=1.5]{CALINA Estudiante}
-	\end{umlcallself}
-	\begin{umlcallself}[op={GenDinero\_QR},type=synchron, padding=1.5, dt=-1]{CALINA Estudiante}
-	\end{umlcallself}
-	\begin{umlcallself}[op={GenPIN},type=synchron, padding=1.5, dt=-1]{CALINA Estudiante}
-	\end{umlcallself}
-\end{umlcall}
-\begin{umlcall}[op={solicitarCompra}, return={QR Code}, dt=5]{CALINA Estudiante}{CALINA web}
-	\begin{umlcallself}[op={GenTranf\_QR},type=synchron, padding=1.5]{CALINA web}
-	\end{umlcallself}
-\end{umlcall}
-\begin{umlcall}[op={leerTranf\_QR}, dt=5]{CALINA Estudiante}{CALINA web}
-	\begin{umlcallself}[op={GenCarta},type=synchron, padding=1.5]{CALINA Estudiante}
-	\end{umlcallself}
-\end{umlcall}
-\end{umlseqdiag}
-\end{tikzpicture}
+	\input{figures/secuencia_compra_cartas}
 \end{adjustbox}
 \\
 {\footnotesize Fuente: de elaboración propia}
@@ -936,37 +577,7 @@ inicia en el nivel ``kitty''.
 \label{img:UMLcreacioncartas}
 \centering
 \begin{adjustbox}{width=15cm}
-\begin{tikzpicture}
-\begin{umlsystem}[x=4]{App CALINA}
-\umlusecase[width=2cm, fill=none]{Leer QR inscripción}
-\umlusecase[y=-3, width=2cm, fill=none]{Accionar carta}
-\umlusecase[y=-6, width=2cm, fill=none]{Comprar nivel}
-
-\umlusecase[x=4.5, y=-4.5, width=2cm, fill=none]{Incremento de nivel}
-
-\umlusecase[x=9, width=2cm, fill=none]{Crear QR inscripción}
-\umlusecase[x=9, y=-3, width=2cm, fill=none]{Crear esquema de niveles}
-\end{umlsystem}
-
-\umlactor[x=-1]{Estudiante}
-\umlactor[x=-1,y=-3]{Sin móvil}
-\umlactor[x=17,y=-1.5]{Docente}
-
-\umlinherit{Sin móvil}{Estudiante}
-
-\umlassoc{Estudiante}{usecase-29}
-\umlassoc{Estudiante}{usecase-30}
-\umlassoc{Estudiante}{usecase-31}
-\umlassoc{Docente}{usecase-33}
-\umlassoc{Docente}{usecase-34}
-\umlinclude{usecase-29}{usecase-33}
-\umlinclude{usecase-30}{usecase-32}
-\umlinclude{usecase-31}{usecase-32}
-\umlinclude{usecase-32}{usecase-34}
-\umlinclude{usecase-33}{usecase-34}
-\umlnote[x=-2,y=-7,fill=none, width=4cm]{Sin móvil}{El estudiante sin dispositivo no puede usar niveles con CALINA}
-
-\end{tikzpicture}
+	\input{figures/requerimiento_niveles}
 \end{adjustbox}
 \\
 {\footnotesize Fuente: de elaboración propia}
@@ -1238,28 +849,7 @@ gráficamente la aplicación CALINA y sus componentes principales.
 \label{img:guicalina}
 \centering
 \begin{adjustbox}{width=15cm}
-\begin{tikzpicture}
-	\node[inner sep=0pt] at (0cm,0cm) {\includegraphics[width=7cm]{prototipos/prototipo1}};
-	\draw[red, line width=0.4mm] (-3.05cm, 5cm) rectangle (-2.4cm, 5.65cm) {};
-	\draw[red, line width=0.4mm] (-4cm, 5.32cm) -- (-3.05cm, 5.32cm);
-	\node[red, anchor=east] at (-4.05cm, 5.32cm) {\textlangle A\textrangle\ Menú de navegación};
-	\draw[red, line width=0.4mm] (2.4cm, 5cm) rectangle (2.9cm, 5.65cm) {};
-	\draw[red, line width=0.4mm] (2.9cm, 5.32cm) -- (4cm, 5.32cm);
-	\node[red, anchor=west] at (4.05cm, 5.32cm) {\textlangle B\textrangle\ Menú de filtro};
-	\draw[red, line width=0.4mm] (1.9cm, 5cm) rectangle (2.4cm, 5.65cm) {};
-	\draw[red, line width=0.4mm] (2.15cm, 5.65cm) -- (2.15cm, 6.5cm);
-	\draw[red, line width=0.4mm] (2.15cm, 6.5cm) -- (4cm, 6.5cm);
-	\node[red, anchor=west] at (4.05cm, 6.5cm) {\textlangle C\textrangle\ Menú de búsqueda};
-	\draw[red, line width=0.4mm] (-1.4cm, 5cm) rectangle (1cm, 5.65cm) {};
-	\draw[red, line width=0.4mm] (-0.2cm, 5.65cm) -- (-0.2cm, 7.5cm);
-	\node[red, anchor=south] at (-0.2cm, 7.5cm) {\textlangle D\textrangle\ Indicador divisa virtual};
-	\draw[red, line width=0.4mm] (-3.05cm, -3.6cm) rectangle (2.95cm, 4.7cm) {};
-	\draw[red, line width=0.4mm] (-4cm, 0.55cm) -- (-3.05cm, 0.55cm);
-	\node[red, anchor=east] at (-4.05cm, 0.55cm) {\textlangle E\textrangle\ Zona de las cartas};
-	\draw[red, line width=0.4mm] (-3.05cm, -5.5cm) rectangle (2.95cm, -3.7cm) {};
-	\draw[red, line width=0.4mm] (-4cm, -4.6cm) -- (-3.05cm, -4.6cm);
-	\node[red, anchor=east] at (-4.05cm, -4.6cm) {\textlangle F\textrangle\ Zona de controles};
-\end{tikzpicture}
+	\input{figures/GUI_CALINA}
 \end{adjustbox}
 \\
 {\footnotesize Fuente: de elaboración propia}
@@ -1292,28 +882,7 @@ capa de dominio (Casos de uso) y la capa de datos (DAO, \textit{Data Access Obje
 \caption{Arquitectura MVVM aplicación CALINA}
 \label{img:arquitectura}
 \centering
-\begin{tikzpicture}[
-		redondeado/.style={draw,align=left,rounded corners=.15cm,inner sep=10pt, minimum width=150pt}
-  	]
-	\node[redondeado, minimum width=200pt, minimum height=115pt] at (0,7.7) {};
-	\node[] at (-1.8,9.1) {\textbf{Capa de la UI}};
-	\node[redondeado](UI) at (0,8) {Elementos UI};
-	\node[redondeado](estado) at (0,6.5) {Soporte de Estados};
-
-	\node[redondeado](dominio) at (0,4.5) {\textbf{Capa de Dominio}};
-
-	\node[redondeado, minimum width=200pt, minimum height=115pt, fill=mydarkgray] at (0,1.2) {};
-	\node[] (temp) at (0,3.4) {};
-	\node[text=white] at (-1.8,2.6) {\textbf{Capa de Datos}};
-	\node[redondeado, text=white, draw=white] (repositorios) at (0,1.5) {Repositorios};
-	\node[redondeado, text=white, draw=white] (datos) at (0,0) {Fuentes de datos};
-
-	\draw[-triangle 90] (UI) edge (estado);
-	\draw[-triangle 90] (estado) edge (dominio);
-	\draw[-triangle 90] (dominio) edge (repositorios);
-	\draw[-triangle 90, white] (temp) edge (repositorios);
-	\draw[-triangle 90, white] (repositorios) edge (datos);
-\end{tikzpicture}
+\input{figures/arquitectura_CALINA}
 \\
 {\footnotesize Fuente: Guía de arquitectura de apps, \citeA{google2022}}
 \end{figure}
@@ -1330,68 +899,8 @@ sistema de gestión de base de datos relacional \textit{SQLite}.
 \caption{Diagrama ER (Entidad Relación), base de datos interna}
 \label{img:diagramaER}
 \centering
-\begin{tikzpicture}[
-		redondeado/.style={draw,align=left,rounded corners=.15cm,inner sep=10pt, minimum width=150pt}
-  	]
-	
-	\node[redondeado, minimum width=200pt, minimum height=370pt, fill=mygray, draw=none, anchor=north west] 
-		at (-3.4,9.4) {};
-	\node[redondeado, minimum width=200pt, minimum height=370pt, fill=white, anchor=north west] 
-		at (-3.5,9.5) {};
-	
-	\node[] at (-1.8,9.8) {\textbf{CALINA.Card}};
-
-	\node[anchor=west] at (-3,9)  {\faKey\hspace{0.2em} imei\_card};
-	\node[anchor=west] at (1.7,9) {string};
-	\node[anchor=west] at (-3,8.5)  {\faKey\hspace{0.2em} imei\_maker};
-	\node[anchor=west] at (1.7,8.5) {string};
-	\draw (-3.2,8) -- (3.2,8);
-	\node[anchor=west] at (-3,7.5)  {title};
-	\node[anchor=west] at (1.7,7.5) {string};
-	\node[anchor=west] at (-3,7)  {description};
-	\node[anchor=west] at (1.7,7) {string};
-	\node[anchor=west] at (-3,6.5)  {type};
-	\node[anchor=west] at (1.7,6.5) {char};
-	\node[anchor=west] at (-3,6)  {difficulty};
-	\node[anchor=west] at (1.7,6) {char};
-	\node[anchor=west] at (-3,5.5)  {number};
-	\node[anchor=west] at (1.7,5.5) {int};
-	\node[anchor=west] at (-3,5)  {imei\_owner};
-	\node[anchor=west] at (1.7,5) {string};
-	\node[anchor=west] at (-3,4.5)  {image};
-	\node[anchor=west] at (1.7,4.5) {string};
-	\node[anchor=west] at (-3,4)  {trigger=``''};
-	\node[anchor=west] at (1.7,4) {string};
-	\node[anchor=west] at (-3,3.5)  {state='N'};
-	\node[anchor=west] at (1.7,3.5) {char};
-	\node[anchor=west] at (-3,3)  {versionCALINA};
-	\node[anchor=west] at (1.7,3) {string};
-	\node[anchor=west] at (-3,2.5)  {date\_create=null};
-	\node[anchor=west] at (1.7,2.5) {date};
-	\node[anchor=west] at (-3,2)  {date\_expire=null};
-	\node[anchor=west] at (1.7,2) {date};
-	\node[anchor=west] at (-3,1.5)  {scope=-1};
-	\node[anchor=west] at (1.7,1.5) {int};
-	\node[anchor=west] at (-3,1)  {isTransfer=true};
-	\node[anchor=west] at (1.7,1) {bool};
-	\node[anchor=west] at (-3,0.5)  {isCloneable=false};
-	\node[anchor=west] at (1.7,0.5) {bool};
-	\node[anchor=west] at (-3,0)  {isEdit=false};
-	\node[anchor=west] at (1.7,0) {bool};
-	\node[anchor=west] at (-3,-0.5)  {cash=0};
-	\node[anchor=west] at (1.7,-0.5) {int};
-	\node[anchor=west] at (-3,-1)  {cash\_symbol='¢'};
-	\node[anchor=west] at (1.7,-1) {char};
-	\node[anchor=west] at (-3,-1.5)  {isSelect=false};
-	\node[anchor=west] at (1.7,-1.5) {bool};
-	\node[anchor=west] at (-3,-2)  {isSecondary=false};
-	\node[anchor=west] at (1.7,-2) {bool};
-	\node[anchor=west] at (-3,-2.5)  {levels=``''};
-	\node[anchor=west] at (1.7,-2.5) {string};
-	\node[anchor=west] at (-3,-3)  {level=``''};
-	\node[anchor=west] at (1.7,-3) {string};
-
-\end{tikzpicture}
+\input{figures/bd_CALINA}
 \\
 {\footnotesize Fuente: de elaboración propia}
 \end{figure}
+

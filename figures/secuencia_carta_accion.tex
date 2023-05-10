@@ -1,0 +1,29 @@
+\begin{tikzpicture}
+\begin{umlseqdiag}
+\umlactor{Estudiante}
+\umlobject[]{CALINA}
+\umlactor{Docente}
+\umlobject[]{CALINA docente}
+\begin{umlcall}[op={usar()}]{Estudiante}{CALINA}
+	\begin{umlcall}[op={confirmación()}, return={respuesta}]{CALINA}{Estudiante}
+	\end{umlcall}
+	\begin{umlcallself}[op={Marcar Carta},type=synchron,padding=1.5]{CALINA}
+	\end{umlcallself}
+	\begin{umlfragment}[type=alt, label={Acción real}, inner xsep=10, inner ysep=1]
+		\begin{umlcall}[type=return, op={QR code}]{CALINA}{Estudiante}
+		\end{umlcall}
+		\begin{umlcall}[op={validación(QR code)}, return={respuesta}, padding=7]{Estudiante}{Docente}
+			\begin{umlcall}[op={leerQR()}, return={confirmación}]{Docente}{CALINA docente}
+				\begin{umlcallself}[op={Registrar()},type=synchron, padding=1.5]{CALINA docente}
+				\end{umlcallself}
+			\end{umlcall}
+		\end{umlcall}
+	\umlfpart[Acción interna]
+		\begin{umlcallself}[op={Trigger()},type=synchron, dt=25, padding=1.5]{CALINA}
+			\begin{umlcall}[type=return, padding=-2]{CALINA}{Estudiante}
+			\end{umlcall}
+		\end{umlcallself}
+	\end{umlfragment}
+\end{umlcall}
+\end{umlseqdiag}
+\end{tikzpicture}

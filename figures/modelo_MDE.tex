@@ -1,0 +1,19 @@
+\begin{tikzpicture}[
+		every node/.append style={circle,draw=gray!80,align=center,minimum width=90pt,very thin}
+  	]
+	\node (D) at (8,0) {
+		\textbf{\large Dinámicas}\\{\scriptsize Comportamiento}\\{\scriptsize del Jugador}
+	};
+	\node (M) at (0,0) {
+		\textbf{\large Mecánicas}\\{\scriptsize Configuración, reglas}\\{\scriptsize y progresión}
+	};
+	\node (E) at (4,-4) {
+		\textbf{\large Emociones}\\{\scriptsize Estado de la mente}\\{\scriptsize del jugador}
+	};
+	\node[draw=none] (C) at (4,-0.5) {
+		\textbf{\large Gamificación}
+	};
+	\draw[triangle 90-triangle 90,bend left=300] (D) edge (M);
+	\draw[triangle 90-triangle 90,bend right] (M) edge (E);
+	\draw[triangle 90-triangle 90,bend left] (D) edge (E);
+\end{tikzpicture}

@@ -1,0 +1,57 @@
+%--------------------------------------------------------------------------------
+%Definición función para graficar cartas
+%--------------------------------------------------------------------------------
+\definecolor{mygray}{RGB}{200,200,200}
+\definecolor{mydarkgray}{RGB}{30,30,30}
+\pgfSetupImageAsPattern[width=15cm]{marble}{img/marbel.jpg}
+\pgfSetupImageAsPattern[width=15cm]{verde}{img/verde.jpg}
+\pgfSetupImageAsPattern[width=15cm]{azul}{img/azul.jpg}
+\pgfSetupImageAsPattern[width=15cm]{morado}{img/morado.jpg}
+\input{invertedcorner}  %Descargado de https://tex.stackexchange.com/questions/341946/tikz-rectangle-with-curved-edges-and-inverted-rounded-corners
+
+\newcommand{\cardHxH}[5]{
+	\fill[rounded corners=.55cm] (0, 0) rectangle (7.41cm, 10.41cm) {};
+	\draw[pattern color=mydarkgray,pattern=fivepointed stars,rounded corners=.55cm] (0, 0) rectangle (7.41cm, 10.41cm) {};
+	\fill[fill=mygray,rounded corners] (0.2cm,9.01cm) rectangle (7.21cm, 10.11cm) {};
+	\node[draw,line width=0.4mm,rectangle with inverted corners, rectangle with inverted corners radius=0.15cm,
+	minimum height=0.94cm, minimum width=1.77cm, inner sep=0pt] at (1.165cm,9.56cm) {#1};
+	\node[draw,line width=0.4mm,rectangle with inverted corners, rectangle with inverted corners radius=0.15cm,
+	minimum height=0.94cm, minimum width=3.15cm, inner sep=0pt] at (3.705cm,9.56cm) {{\footnotesize #2}};
+	\node[draw,line width=0.4mm,rectangle with inverted corners, rectangle with inverted corners radius=0.15cm,
+	minimum height=0.94cm, minimum width=1.77cm, inner sep=0pt] at (6.245cm,9.56cm) {\textbf{#3}};
+	\draw[line width=0.4mm] (0.22cm,9.02cm) circle (0.13cm);
+	\draw[line width=0.4mm] (2.09cm,9.01cm) circle (0.13cm);
+	\draw[line width=0.4mm] (5.32cm,9.01cm) circle (0.13cm);
+	\draw[line width=0.4mm] (7.19cm,9.02cm) circle (0.13cm);
+	\draw[line width=0.4mm] (0.22cm,10.09cm) circle (0.13cm);
+	\draw[line width=0.4mm] (2.09cm,10.11cm) circle (0.13cm);
+	\draw[line width=0.4mm] (5.32cm,10.11cm) circle (0.13cm);
+	\draw[line width=0.4mm] (7.19cm,10.09cm) circle (0.13cm);
+	\fill[fill=mygray] (0.2cm,4.78cm) rectangle (7.21cm, 8.79cm) {};
+	\ifthenelse{\equal{\string #4}{\string none}}{
+	}{
+	\node[draw,line width=1mm,inner sep=0pt] at (3.705cm,6.785cm) {\includegraphics[width=6.71cm,height=3.71cm]{#4}};
+	}
+	\path[image as pattern] (0.2cm,0.48cm) rectangle (7.21cm,4.58cm) {};
+	\fill[rounded corners] (0.4cm,0.68cm) rectangle (7.01cm,4.38cm) {};
+	\node[fill=mygray, minimum height=3.44cm, minimum width=6.35cm]  at (3.705cm,2.53cm) {
+		\begin{varwidth}{6cm}
+		\centering
+		#5	
+		\end{varwidth}
+	};
+}
+
+\newcommand{\cardHxHBack}[1]{
+	\fill[rounded corners=.55cm] (0, 0) rectangle (7.41cm, 10.41cm) {};
+	\draw[pattern color=mydarkgray,pattern=fivepointed stars,rounded corners=.55cm] (0, 0) rectangle (7.41cm, 10.41cm) {};
+	\fill[white] (0.505cm, 3.3cm) rectangle (6.905cm, 9.7cm) {};
+	\node[inner sep=0] at (3.705cm,6.5cm) (QR) {
+		\qrcode[height=6cm,nolink]{#1}
+	};
+	\node[rounded corners=.15cm,fill=mygray, minimum width=3cm, minimum height=1cm] at (1.97cm,2.3cm) {\faPlayCircle\ Usar};
+	\node[rounded corners=.15cm,fill=mygray, minimum width=3cm, minimum height=1cm] at (5.44cm,2.3cm) {\faAslInterpreting\ Vender};
+	\node[rounded corners=.15cm,fill=mygray, minimum width=3cm, minimum height=1cm] at (1.97cm,1cm) {\faGift\ Regalar};
+	\node[rounded corners=.15cm,fill=mygray, minimum width=3cm, minimum height=1cm] at (5.44cm,1cm) {\faTimesCircle\ Destruir};
+}
+%--------------------------------------------------------------------------------

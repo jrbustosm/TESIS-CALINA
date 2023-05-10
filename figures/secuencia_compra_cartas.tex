@@ -1,0 +1,22 @@
+\begin{tikzpicture}
+\begin{umlseqdiag}
+\umlobject[]{CALINA Estudiante}
+\umlobject[]{CALINA web}
+\begin{umlcall}[op={leerID\_QR}, return={PIN}]{CALINA Estudiante}{CALINA web}
+	\begin{umlcallself}[op={Restar\_Dinero},type=synchron, padding=1.5]{CALINA Estudiante}
+	\end{umlcallself}
+	\begin{umlcallself}[op={GenDinero\_QR},type=synchron, padding=1.5, dt=-1]{CALINA Estudiante}
+	\end{umlcallself}
+	\begin{umlcallself}[op={GenPIN},type=synchron, padding=1.5, dt=-1]{CALINA Estudiante}
+	\end{umlcallself}
+\end{umlcall}
+\begin{umlcall}[op={solicitarCompra}, return={QR Code}, dt=5]{CALINA Estudiante}{CALINA web}
+	\begin{umlcallself}[op={GenTranf\_QR},type=synchron, padding=1.5]{CALINA web}
+	\end{umlcallself}
+\end{umlcall}
+\begin{umlcall}[op={leerTranf\_QR}, dt=5]{CALINA Estudiante}{CALINA web}
+	\begin{umlcallself}[op={GenCarta},type=synchron, padding=1.5]{CALINA Estudiante}
+	\end{umlcallself}
+\end{umlcall}
+\end{umlseqdiag}
+\end{tikzpicture}
